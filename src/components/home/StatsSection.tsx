@@ -33,7 +33,7 @@ function StatCard({ stat, index, active }: { stat: (typeof stats)[0]; index: num
 
   return (
     <motion.div
-      className="flex-1 min-w-[220px] max-w-[250px] flex items-center gap-4 bg-white rounded-2xl px-5 py-5 border border-gray-100 cursor-default transition-all duration-500 ease-smooth hover:-translate-y-1 hover:shadow-apple-lg hover:border-orange-200"
+      className="flex-1 min-w-[180px] max-w-[250px] flex items-center gap-4 bg-white rounded-2xl px-5 py-5 border border-gray-100 cursor-default transition-all duration-500 ease-smooth hover:-translate-y-1 hover:shadow-apple-lg hover:border-orange-200"
       initial={{ opacity: 0, y: 18 }}
       animate={active ? { opacity: 1, y: 0 } : {}}
       transition={{ delay: index * 0.12, duration: 0.6, ease: [0.22, 1, 0.36, 1] as any }}

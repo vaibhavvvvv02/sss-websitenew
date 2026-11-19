@@ -103,6 +103,9 @@ export default function POSP() {
           from { transform: rotate(0deg); }
           to   { transform: rotate(360deg); }
         }
+        @media (prefers-reduced-motion: reduce) {
+          .sss-logo-watermark { animation: none !important; }
+        }
       `}</style>
       <Helmet>
         <title>Become a POSP | {SITE_NAME}</title>
@@ -224,7 +227,8 @@ export default function POSP() {
 
         @media (max-width: 1024px) { .posp-benefits-grid { grid-template-columns: 1fr 1fr; } }
         @media (max-width: 900px) { .posp-hero-inner { grid-template-columns: 1fr; } .posp-steps { grid-template-columns: 1fr 1fr; } .posp-steps::before { display: none; } .posp-elig-inner { grid-template-columns: 1fr; } }
-        @media (max-width: 560px) { .posp-benefits-grid { grid-template-columns: 1fr; } .posp-steps { grid-template-columns: 1fr; } .posp-reg-card { padding: 24px 20px; } }
+        @media (max-width: 560px) { .posp-benefits-grid { grid-template-columns: 1fr; } .posp-steps { grid-template-columns: 1fr; } .posp-reg-card { padding: 24px 18px; } }
+        @media (max-width: 400px) { .posp-sec { padding-left: 16px; padding-right: 16px; } }
       `}</style>
 
       <div className="posp-page">
@@ -237,7 +241,7 @@ export default function POSP() {
           <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-white pointer-events-none z-10" />
         {/* SSS logo watermark */}
         <div className="absolute pointer-events-none z-10" style={{ top: '50%', left: '25%', transform: 'translate(-50%, -50%)' }}>
-          <img src="/assets/sss.png" alt="" className="w-[420px] h-[420px] object-contain" style={{ opacity: 0.07, animation: 'sssLogoSpin 20s linear infinite' }} />
+          <img src="/assets/sss.png" alt="" className="sss-logo-watermark w-[420px] h-[420px] object-contain" style={{ opacity: 0.07, animation: 'sssLogoSpin 20s linear infinite' }} />
         </div>
           <div className="relative z-20 max-w-[1280px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
             {/* Left — text */}

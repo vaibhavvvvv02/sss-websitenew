@@ -36,6 +36,9 @@ export default function About() {
           from { transform: rotate(0deg); }
           to   { transform: rotate(360deg); }
         }
+        @media (prefers-reduced-motion: reduce) {
+          .sss-logo-watermark { animation: none !important; }
+        }
       `}</style>
       <Helmet>
         <title>About Us | SSS Risk Management & Insurance Brokers</title>
@@ -52,7 +55,7 @@ export default function About() {
           <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-white pointer-events-none z-10" />
         {/* SSS logo watermark */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
-          <img src="/assets/sss.png" alt="" className="w-[480px] h-[480px] object-contain" style={{ opacity: 0.07, animation: 'sssLogoSpin 20s linear infinite' }} />
+          <img src="/assets/sss.png" alt="" className="sss-logo-watermark w-[480px] h-[480px] object-contain" style={{ opacity: 0.07, animation: 'sssLogoSpin 20s linear infinite' }} />
         </div>
 
           <div className="relative z-20 text-center px-6 max-w-[720px] mx-auto">
@@ -92,6 +95,7 @@ export default function About() {
               <Link
                 to={c.to}
                 className="group block w-[340px] max-w-full bg-white border-2 border-gray-200 rounded-2xl p-12 text-center no-underline transition-all duration-600 ease-smooth hover:border-brand-orange hover:shadow-[0_16px_48px_rgba(255,107,0,0.14)] hover:-translate-y-1.5 relative overflow-hidden"
+                style={{ maxWidth: '100%', width: 'clamp(280px, 90vw, 340px)' }}
               >
                 {/* Hover overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-600" />

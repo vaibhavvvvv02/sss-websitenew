@@ -139,6 +139,9 @@ export default function Career() {
           from { transform: rotate(0deg); }
           to   { transform: rotate(360deg); }
         }
+        @media (prefers-reduced-motion: reduce) {
+          .sss-logo-watermark { animation: none !important; }
+        }
       `}</style>
       <Helmet>
         <title>Careers | {SITE_NAME}</title>
@@ -218,6 +221,7 @@ export default function Career() {
 
         @media (max-width: 768px) { .car-perks-grid { grid-template-columns: 1fr 1fr; } }
         @media (max-width: 560px) { .car-perks-grid { grid-template-columns: 1fr; } .car-form-card { padding: 24px 18px; } .car-form-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 400px) { .car-job-meta { gap: 8px 12px; } .car-job-header { padding: 16px 16px; } .car-job-body { padding: 0 16px 20px; } }
       `}</style>
 
       <div className="car-page">
@@ -230,7 +234,7 @@ export default function Career() {
           <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-white pointer-events-none z-10" />
         {/* SSS logo watermark */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
-          <img src="/assets/sss.png" alt="" className="w-[480px] h-[480px] object-contain" style={{ opacity: 0.07, animation: 'sssLogoSpin 20s linear infinite' }} />
+          <img src="/assets/sss.png" alt="" className="sss-logo-watermark w-[480px] h-[480px] object-contain" style={{ opacity: 0.07, animation: 'sssLogoSpin 20s linear infinite' }} />
         </div>
           <div className="relative z-20 text-center px-6 max-w-[720px] mx-auto">
             <motion.span className="inline-block bg-orange-50/80 text-brand-orange font-inter text-[11px] font-bold tracking-[1.5px] uppercase px-3.5 py-1.5 rounded-full mb-4 border border-orange-200"
