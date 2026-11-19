@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment variables (sensitive)
+.env
+.env.local
+.env.*.local
+
+# Keep production env as example but not secrets
+# .env.production  ← commit this if it has no secrets
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Vite cache
+.vite/
