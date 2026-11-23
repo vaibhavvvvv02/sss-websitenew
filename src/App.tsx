@@ -20,6 +20,8 @@ const Products = lazy(() => import('./pages/Products'))
 const ProductDetail = lazy(() => import('./pages/ProductDetail'))
 const GetQuote = lazy(() => import('./pages/GetQuote'))
 const NotFound = lazy(() => import('./pages/NotFound'))
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'))
+const TermsConditions = lazy(() => import('./pages/TermsConditions'))
 
 export default function App() {
   useHashScroll()
@@ -42,6 +44,8 @@ export default function App() {
             <Route path="/products" element={<Products />} />
             <Route path="/products/:slug" element={<ProductDetail />} />
             <Route path="/get-quote" element={<GetQuote />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-conditions" element={<TermsConditions />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

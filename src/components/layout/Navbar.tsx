@@ -62,14 +62,8 @@ export default function Navbar() {
         <div className="max-w-[1280px] mx-auto px-6 flex items-center justify-between h-20">
 
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2.5 flex-shrink-0 min-w-0">
-            <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center overflow-hidden flex-shrink-0">
-              <img src="/assets/sss.png" alt="SSS Logo" className="w-12 h-12 object-contain rounded-full" />
-            </div>
-            <div className="flex flex-col leading-tight min-w-0">
-              <span className="font-poppins font-bold text-[13px] text-gray-900 truncate">SSS Risk Management &</span>
-              <span className="font-inter text-[10px] text-gray-500">Insurance Brokers Pvt Ltd</span>
-            </div>
+          <Link to="/" className="flex items-center flex-shrink-0 ml-4 lg:ml-8">
+            <img src="/assets/sss_logo.png" alt="SSS Logo" className="w-16 h-16 md:w-24 md:h-24 lg:w-40 lg:h-40 object-contain" />
           </Link>
 
           {/* Desktop links */}

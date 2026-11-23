@@ -13,6 +13,8 @@ const infoLinks = [
   { label: 'About Us', href: '/about' },
   { label: 'Contact Us', href: '/contact' },
   { label: 'Career', href: '/career' },
+  { label: 'Privacy Policy', href: '/privacy-policy' },
+  { label: 'Terms & Conditions', href: '/terms-conditions' },
 ]
 
 export default function Footer() {

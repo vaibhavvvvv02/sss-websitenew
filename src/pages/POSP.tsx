@@ -16,16 +16,16 @@ const steps = [
   { num: '01', title: 'Register Online', desc: 'Fill our simple POSP registration form with your basic details.', color: '#FF6B00', bg: '#FFF1E4' },
   { num: '02', title: 'Complete Training', desc: '15-hour IRDAI-mandated training provided free of cost by SSS.', color: '#1a5276', bg: '#EBF5FB' },
   { num: '03', title: 'Pass the Exam',    desc: 'Clear the basic IRDAI certification exam to get your POSP license.', color: '#2E7D32', bg: '#E7F5EA' },
-  { num: '04', title: 'Start Earning',    desc: 'Start selling policies and earn attractive commissions from day one.', color: '#FF6B00', bg: '#FFF1E4' },
+  { num: '04', title: 'Start Earning',    desc: 'Start selling policies and earn attractive rewards from day one.', color: '#FF6B00', bg: '#FFF1E4' },
 ]
 
 const benefits = [
-  { icon: TrendingUp, color: '#FF6B00', bg: '#FFF1E4', title: 'High Earning Potential',   desc: 'Earn up to ₹1 Lakh+ per month with uncapped commissions on every policy sold.' },
+  { icon: TrendingUp, color: '#FF6B00', bg: '#FFF1E4', title: 'High Earning Potential',   desc: 'Earn up to ₹1 Lakh+ per month with uncapped rewards on every policy sold.' },
   { icon: Shield,     color: '#2E7D32', bg: '#E7F5EA', title: 'IRDAI Licensed',            desc: 'Operate as a fully certified IRDAI Point of Sales Person with legal authority.' },
   { icon: BookOpen,   color: '#1a5276', bg: '#EBF5FB', title: 'Free Training & Support',  desc: '15-hour training, study material, and dedicated support — all provided by SSS.' },
   { icon: Users,      color: '#FF6B00', bg: '#FFF1E4', title: 'Work from Anywhere',        desc: 'No fixed office. Sell policies from home, on the field, or anywhere you prefer.' },
   { icon: Award,      color: '#2E7D32', bg: '#E7F5EA', title: 'Multi-Insurer Products',   desc: 'Access to 30+ insurance companies — Motor, Health, Life and more.' },
-  { icon: CheckCircle2, color: '#1a5276', bg: '#EBF5FB', title: 'On-Time Payouts',        desc: 'Commissions credited on time every month. No delays, no hidden deductions.' },
+  { icon: CheckCircle2, color: '#1a5276', bg: '#EBF5FB', title: 'On-Time Payouts',        desc: 'Rewards credited on time every month. No delays, no hidden deductions.' },
 ]
 
 const eligibility = [
@@ -39,7 +39,7 @@ const eligibility = [
 const faqs = [
   { q: 'What is a POSP?', a: 'A Point of Sales Person (POSP) is an individual authorized by IRDAI to sell specified insurance products on behalf of an insurance broker or company.' },
   { q: 'Is any investment required?', a: 'No. Becoming a POSP with SSS is completely free. We provide training, study material and certification support at no cost.' },
-  { q: 'How much can I earn?', a: 'Commissions vary by product. On average, POSP agents earn 10–25% commission per policy. Top performers earn ₹50,000–₹1,00,000+ per month.' },
+  { q: 'How much can I earn?', a: 'Rewards vary by product. On average, POSP agents earn 10–25% reward per policy. Top performers earn ₹50,000–₹1,00,000+ per month.' },
   { q: 'Can I do this part-time?', a: 'Absolutely. Many of our POSP agents start part-time and grow it into a full-time business at their own pace.' },
   { q: 'What products can I sell?', a: 'Motor insurance, health insurance, personal accident, travel insurance, home insurance and term life — all under your POSP license.' },
 ]
@@ -109,7 +109,7 @@ export default function POSP() {
       `}</style>
       <Helmet>
         <title>Become a POSP | {SITE_NAME}</title>
-        <meta name="description" content="Become an IRDAI certified Point of Sales Person (POSP) with SSS Risk Management. Free training, multi-insurer access, and high commissions. Register today." />
+        <meta name="description" content="Become an IRDAI certified Point of Sales Person (POSP) with SSS Risk Management. Free training, multi-insurer access, and high rewards. Register today." />
       </Helmet>
 
       <style>{`
@@ -264,11 +264,11 @@ export default function POSP() {
               </div>
               <motion.p className="font-inter text-[15px] text-gray-600 leading-relaxed mb-7 max-w-[480px] lg:mx-0 mx-auto"
                 initial={{ opacity:0, y:16 }} animate={{ opacity:1, y:0 }} transition={{ delay:0.35, duration:0.55, ease:EASE }}>
-                Start your own insurance business with zero investment. Get certified, sell policies, and earn high commissions working with SSS.
+                Start your own insurance business with zero investment. Get certified, sell policies, and earn high rewards working with SSS.
               </motion.p>
               <motion.div className="flex flex-col gap-2.5"
                 initial={{ opacity:0, y:16 }} animate={{ opacity:1, y:0 }} transition={{ delay:0.5, duration:0.5, ease:EASE }}>
-                {['Zero investment — completely free', '15-hour free IRDAI training', 'Commissions up to ₹1L+/month', 'Work from home or field — your choice'].map(t => (
+                {['Zero investment — completely free', '15-hour free IRDAI training', 'Rewards up to ₹1L+/month', 'Work from home or field — your choice'].map(t => (
                   <div key={t} className="flex items-center gap-2.5 font-inter text-[14px] text-gray-700 justify-center lg:justify-start">
                     <CheckCircle2 size={18} color="#2E7D32" strokeWidth={2} className="flex-shrink-0" />{t}
                   </div>

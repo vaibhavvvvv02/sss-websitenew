@@ -33,10 +33,11 @@ const contactCards = [
 
 interface Branch {
   city: string
-  tag?: string      // e.g. "Head Office"
+  tag?: string
   isHO?: boolean
   address: string
   mapUrl: string
+  email?: string
 }
 
 const branches: Branch[] = [
@@ -46,61 +47,73 @@ const branches: Branch[] = [
     isHO: true,
     address: '1007 to 1009, Altimus, Behind Sales India, Ashram Road, Ahmedabad, Gujarat – 380009',
     mapUrl: 'https://maps.google.com/?q=1007+Altimus+Ashram+Road+Ahmedabad+Gujarat+380009',
+    email: 'customercare@sssriskmanagement.com',
   },
   {
     city: 'Noida',
     address: 'G.F-002, F-1, Sector-3, Noida, Uttar Pradesh – 201301',
     mapUrl: 'https://maps.google.com/?q=G.F-002+F-1+Sector-3+Noida+Uttar+Pradesh+201301',
+    email: 'rajiv.kumar@sssriskmanagement.com',
   },
   {
     city: 'Mumbai',
     address: '706, 7th Floor, Corporate Avenue, Opp Atalanta Center, Sonawala Road, Goregaon East, Mumbai – 400001',
     mapUrl: 'https://maps.google.com/?q=Corporate+Avenue+Goregaon+East+Mumbai+400001',
+    email: 'anandrao.bhosale@sssriskmanagement.com',
   },
   {
     city: 'Kolkata',
     address: 'Benchworks, New Town Square Building, 4M, Chinar Park, Room No. 2B, Rajarhat, Kolkata – 700136',
     mapUrl: 'https://maps.google.com/?q=New+Town+Square+Chinar+Park+Kolkata+700136',
+    email: 'chirabrata.sen@sssriskmanagement.com',
   },
   {
     city: 'Gandhidham',
     address: 'Aum Corner, Banking Circle, Gandhidham – 370201',
     mapUrl: 'https://maps.google.com/?q=Banking+Circle+Gandhidham+370201',
+    email: 'darshan.solanki@sssriskmanagement.com',
   },
   {
     city: 'Rajkot',
     address: '404, Ganesh Trade Centre, Between KKV Hall & Indira Circle, 150 Feet Ring Road, Rajkot – 360005',
     mapUrl: 'https://maps.google.com/?q=Ganesh+Trade+Centre+150+Feet+Ring+Road+Rajkot+360005',
+    email: 'mayur.bhensdadia@sssriskmanagement.com',
   },
   {
     city: 'Pune',
     address: 'Rama Equator, Office No. 611, Near PCMC Metro Station, Pimpri Colony, Pune – 411018',
     mapUrl: 'https://maps.google.com/?q=Rama+Equator+Pimpri+Colony+Pune+411018',
+    email: 'reena.tyagi@sssriskmanagement.com',
   },
   {
     city: 'Kolhapur',
     address: 'Lord Vista Building, 836/1, E Ward, 1st Floor, Office No. 108, 4th Lane Shahupuri, Kolhapur – 416001',
     mapUrl: 'https://maps.google.com/?q=Lord+Vista+Building+Shahupuri+Kolhapur+416001',
+    email: 'rahul.mane@sssriskmanagement.com',
   },
   {
     city: 'Bangalore',
     address: 'Bangalore — contact us for the latest address.',
     mapUrl: 'https://maps.google.com/?q=Bangalore+Karnataka',
+    email: 'customercare@sssriskmanagement.com',
   },
   {
     city: 'Vadodara',
     address: '819, 8th Floor, Samanvay Silver, Behind The Royal Orchid Central Hotel, Akota Mujmahuda Road, Vadodara – 390020',
     mapUrl: 'https://maps.google.com/?q=Samanvay+Silver+Akota+Vadodara+390020',
+    email: 'anshu.mangtani@sssriskmanagement.com',
   },
   {
     city: 'Vapi',
     address: 'SB-08, 2nd Floor, Solitaire Business Centre, Opp. DCB Bank, GIDC Char Rasta, Vapi – 396195',
     mapUrl: 'https://maps.google.com/?q=Solitaire+Business+Centre+GIDC+Vapi+396195',
+    email: 'anil.mohite@sssriskmanagement.com',
   },
   {
     city: 'Surat',
     address: 'Ground Floor, Shop No. 122, Abhikram Apartment, Opp. Bhulabhavan School, Adajan Gam, Surat – 395009',
     mapUrl: 'https://maps.google.com/?q=Abhikram+Apartment+Adajan+Surat+395009',
+    email: 'customercare@sssriskmanagement.com',
   },
 ]
 

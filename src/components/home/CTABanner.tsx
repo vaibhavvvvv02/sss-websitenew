@@ -8,12 +8,12 @@ export default function CTABanner() {
 
   return (
     <section
-      className="relative py-[52px] overflow-hidden border-t border-orange-200"
-      style={{ background: 'linear-gradient(135deg, #fff7f0 0%, #fff0e6 100%)' }}
+      className="relative py-[52px] overflow-hidden"
+      style={{ background: 'linear-gradient(135deg, rgba(255,107,0,0.18) 0%, rgba(255,160,60,0.10) 18%, rgba(255,255,255,0.98) 40%, rgba(255,255,255,1) 50%, rgba(220,245,225,0.85) 72%, rgba(46,125,50,0.20) 100%)' }}
       ref={ref}
     >
-      {/* Decorative shield emoji */}
-      <div className="absolute right-16 top-1/2 -translate-y-1/2 text-[110px] opacity-[0.12] pointer-events-none select-none">🛡️</div>
+      <div className="absolute top-[-60px] left-[-60px] w-[280px] h-[280px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(255,107,0,0.12) 0%, transparent 70%)' }} />
+      <div className="absolute bottom-[-60px] right-[-60px] w-[280px] h-[280px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(46,125,50,0.12) 0%, transparent 70%)' }} />
 
       <div className="max-w-[1280px] mx-auto px-6 relative z-10 flex items-center justify-between gap-8 flex-wrap">
 

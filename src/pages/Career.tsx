@@ -1,7 +1,7 @@
 ﻿import { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { motion } from 'framer-motion'
-import { Briefcase, MapPin, Clock, ChevronDown, Send, Loader2, AlertCircle, ShieldCheck, Users, TrendingUp, Heart, Star } from 'lucide-react'
+import { Briefcase, MapPin, Clock, ChevronDown, Send, Loader2, AlertCircle, ShieldCheck, TrendingUp, Users, Heart, Star, PartyPopper, Hospital, Plane, Wallet, GraduationCap, Smile, Building2, Handshake } from 'lucide-react'
 import { CONTACT, SITE_NAME } from '../config'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -11,6 +11,37 @@ const EASE: any = [0.22, 1, 0.36, 1]
 const openings = [
   {
     id: 1,
+    title: 'Head for Non-Motor Business',
+    dept: 'Underwriting',
+    type: 'Full Time',
+    location: 'Ahmedabad',
+    exp: '5+ Years',
+    desc: 'As a Non-Motor Insurance Underwriter at SSS Risk Management, you have to do Technical analysis of proposals, Liasioning with Insurance company. Team Management / Development, Technical Training to Team members, Quotes within TAT, Negotiation and Bargaining with Insurance company.',
+    skills: ['Underwriting', 'Team Management', 'Negotiation', 'Technical Training', 'Insurance Knowledge'],
+  },
+  {
+    id: 2,
+    title: 'Corporate Relationship Manager',
+    dept: 'Sales',
+    type: 'Full Time',
+    location: 'Ahmedabad',
+    exp: 'Experienced',
+    desc: 'A Corporate Relationship Manager in the insurance sector is responsible for cultivating and managing strategic relationships with corporate clients. This role focuses on understanding clients\' unique insurance needs and delivering customized solutions aligned with their business objectives.',
+    skills: ['Relationship Management', 'Corporate Sales', 'Insurance Knowledge', 'Client Servicing'],
+  },
+  {
+    id: 3,
+    title: 'Relationship Manager',
+    dept: 'Sales',
+    type: 'Full Time',
+    location: 'Ahmedabad',
+    exp: 'Fresher & Experienced',
+    education: 'MBA',
+    desc: 'Manages an organization\'s overall insurance programs. Analysis of insurance needs by identifying risk exposures and analyzing and classifying risks to provide optimum coverage, costs, and claim settlements. Conducts regular policy reviews, research and compile loss trends, and review actuarial estimations.',
+    skills: ['Risk Analysis', 'Policy Management', 'MS Office', 'Communication', 'MBA Preferred'],
+  },
+  {
+    id: 4,
     title: 'Insurance Sales Executive',
     dept: 'Sales',
     type: 'Full Time',
@@ -20,7 +51,7 @@ const openings = [
     skills: ['Communication', 'Insurance Knowledge', 'Client Servicing', 'Goal Oriented'],
   },
   {
-    id: 2,
+    id: 5,
     title: 'Claims Executive',
     dept: 'Claims',
     type: 'Full Time',
@@ -30,7 +61,7 @@ const openings = [
     skills: ['Claims Processing', 'Documentation', 'Coordination', 'Customer Handling'],
   },
   {
-    id: 3,
+    id: 6,
     title: 'POSP Channel Manager',
     dept: 'Distribution',
     type: 'Full Time',
@@ -40,7 +71,7 @@ const openings = [
     skills: ['Team Management', 'Recruitment', 'Training', 'Distribution'],
   },
   {
-    id: 4,
+    id: 7,
     title: 'Marketing Executive',
     dept: 'Marketing',
     type: 'Full Time',
@@ -50,7 +81,7 @@ const openings = [
     skills: ['Digital Marketing', 'Social Media', 'Content', 'Analytics'],
   },
   {
-    id: 5,
+    id: 8,
     title: 'Insurance Operations Executive',
     dept: 'Operations',
     type: 'Full Time',
@@ -58,6 +89,34 @@ const openings = [
     exp: '0–2 Years',
     desc: 'Manage policy issuance, renewals, endorsements and coordinate between clients and insurance companies.',
     skills: ['Policy Management', 'Data Entry', 'MS Office', 'Attention to Detail'],
+  },
+]
+
+const benefits = [
+  {
+    icon: PartyPopper, color: '#FF6B00', bg: '#FFF1E4',
+    title: 'Culture & Engagement',
+    items: ['Birthday & anniversary celebrations', 'Team lunches and events', 'Friendly and collaborative work culture', 'Employee engagement activities'],
+  },
+  {
+    icon: Hospital, color: '#2E7D32', bg: '#E7F5EA',
+    title: 'Health & Insurance Benefits',
+    items: ['GPA — Group Personal Accident Insurance', 'GMC — Group Medical Coverage for employees & dependents', 'WC — Workmen Compensation for workplace injuries', 'Cashless hospitalization at leading hospitals', 'Annual health check-ups', 'Maternity and Paternity Benefits', 'Paid leaves'],
+  },
+  {
+    icon: Plane, color: '#1a5276', bg: '#EBF5FB',
+    title: 'Travel & Experiences',
+    items: ['Local Employee Trips — Team outings & weekend retreats', 'Foreign Trips — International trips for top performers', 'Annual company offsite events'],
+  },
+  {
+    icon: Wallet, color: '#2E7D32', bg: '#E7F5EA',
+    title: 'Work & Life Benefits',
+    items: ['Competitive salary packages', 'Paid leaves & holidays', 'Flexible work environment', 'Employee recognition programs', 'Festival celebrations & team events'],
+  },
+  {
+    icon: GraduationCap, color: '#FF6B00', bg: '#FFF1E4',
+    title: 'Career Growth & Learning',
+    items: ['Opportunities for professional development', 'Training programs and skill enhancement', 'Mentorship from experienced professionals', 'Clear career progression paths'],
   },
 ]
 
@@ -285,6 +344,95 @@ export default function Career() {
           </div>
         </div>
 
+        {/* Benefits of Joining Us */}
+        <div className="max-w-[1280px] mx-auto px-6 py-14">
+          <div className="car-sec-tag">EMPLOYEE BENEFITS</div>
+          <h2 className="car-sec-title">Benefits of <span>Joining Us</span></h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {benefits.map((b, i) => (
+              <motion.div key={b.title}
+                className="bg-white rounded-2xl border-[1.5px] border-gray-200 p-6 transition-all duration-500 hover:border-brand-orange hover:shadow-apple-lg hover:-translate-y-1"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1, duration: 0.6, ease: EASE }}>
+                <div className="w-12 h-12 rounded-[14px] flex items-center justify-center mb-3" style={{ background: b.bg }}>
+                  <b.icon size={22} color={b.color} strokeWidth={1.8} />
+                </div>
+                <div className="font-poppins font-bold text-[15px] text-gray-900 mb-3">{b.title}</div>
+                <ul className="flex flex-col gap-1.5">
+                  {b.items.map(item => (
+                    <li key={item} className="flex items-start gap-2 font-inter text-[13px] text-gray-500">
+                      <span className="w-4 h-4 rounded-full bg-orange-100 text-brand-orange flex items-center justify-center flex-shrink-0 mt-0.5 text-[9px] font-bold">✓</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Happy Employees Stats */}
+        <div className="max-w-[1100px] mx-auto px-6 py-14 flex justify-center gap-6 flex-wrap">
+          {[
+            { Icon: Smile,       color: '#FF6B00', bg: '#FFEEDD', ring: '#FFD9B3', value: '200+', label: 'Happy Employees' },
+            { Icon: Building2,   color: '#2E7D32', bg: '#DDF5E8', ring: '#B7E8CB', value: '10+',  label: 'Branches Pan India' },
+            { Icon: GraduationCap, color: '#1a5276', bg: '#E1EEFF', ring: '#BBD8FF', value: '15+', label: 'Years of Expertise' },
+            { Icon: Handshake,   color: '#be185d', bg: '#FDE4F3', ring: '#F9C2E4', value: '400+', label: 'POSP Partners' },
+          ].map((s, i) => (
+            <motion.div key={s.label}
+              className="flex-1 min-w-[180px] max-w-[250px] flex items-center gap-4 bg-white rounded-2xl px-5 py-5 border border-gray-100 transition-all duration-500 hover:-translate-y-1 hover:shadow-apple-lg hover:border-orange-200"
+              style={{ boxShadow: '0 2px 10px rgba(17,24,39,0.05)' }}
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.12, duration: 0.6, ease: EASE }}>
+              <div className="w-[52px] h-[52px] rounded-[14px] flex items-center justify-center flex-shrink-0"
+                style={{ background: s.bg, boxShadow: `0 0 0 6px ${s.ring}55` }}>
+                <s.Icon size={24} color={s.color} strokeWidth={1.8} />
+              </div>
+              <div>
+                <div className="font-poppins font-extrabold text-[27px] text-brand-orange leading-none">{s.value}</div>
+                <div className="font-inter text-[13px] text-gray-500 mt-1">{s.label}</div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Happy Employees Testimonials */}
+        <div className="max-w-[1280px] mx-auto px-6 py-14">
+          <div className="text-center mb-10">
+            <span className="inline-block bg-orange-50 text-brand-orange font-inter text-[11px] font-bold tracking-[1.5px] uppercase px-3.5 py-1.5 rounded-full mb-3 border border-orange-200">OUR PEOPLE</span>
+            <h2 className="font-poppins font-extrabold text-[clamp(22px,2.8vw,32px)] text-gray-900">Happy <span className="text-brand-orange">Employees</span></h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { name: 'Reni Sokhdiya', role: 'HR Manager', img: '/assets/reni.jpeg', quote: "I've been with SSS for two years now, and it feels like a second home. The leadership team genuinely cares about employees' well-being and growth. The benefits and career advancement opportunities are unbeatable." },
+              { name: 'Devang Kamdar', role: 'Accountant', img: '/assets/devang.webp', quote: "I've been part of the finance team at SSS for over a decade, and I'm proud to say I've grown alongside this company. The financial stability, commitment to ethical practices, and the strong focus on work-life balance have kept me here." },
+              { name: 'Sunil Bhadra', role: 'President', img: '/assets/sunil.webp', quote: "I joined SSS a year ago, and it has been an amazing journey so far. The training and support provided have been exceptional, and I've had the chance to interact with fantastic customers every day." },
+            ].map((e, i) => (
+              <motion.div key={e.name}
+                className="bg-white rounded-2xl p-7 border-[1.5px] border-gray-200 flex flex-col gap-5 transition-all duration-500 hover:shadow-apple-lg hover:-translate-y-1 hover:border-brand-orange"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.12, duration: 0.65, ease: EASE }}>
+                <p className="font-inter text-[13.5px] text-gray-600 leading-relaxed italic flex-1">"{e.quote}"</p>
+                <div className="flex items-center gap-3">
+                  <img src={e.img} alt={e.name}
+                    className="w-12 h-12 rounded-full object-cover object-top flex-shrink-0 border-2 border-orange-200"
+                    onError={(ev) => { (ev.target as HTMLImageElement).src = '/assets/sss_logo.png' }} />
+                  <div>
+                    <div className="font-poppins font-bold text-[14px] text-gray-900">{e.name}</div>
+                    <div className="font-inter text-[12px] text-brand-orange">{e.role}</div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
         {/* Openings */}
         <div className="car-openings" style={{ marginTop: 72 }}>
           <div className="car-sec-tag">OPEN POSITIONS</div>
@@ -307,6 +455,11 @@ export default function Career() {
                 {openJob === job.id && (
                   <div className="car-job-body">
                     <p className="car-job-desc">{job.desc}</p>
+                    {'education' in job && job.education && (
+                      <div className="inline-flex items-center gap-1.5 mb-3 px-3 py-1 bg-blue-50 text-blue-700 rounded-full font-inter text-[12px] font-semibold border border-blue-200">
+                        🎓 Education: {job.education}
+                      </div>
+                    )}
                     <div className="car-job-skills">
                       {job.skills.map(s => <span key={s} className="car-job-skill">{s}</span>)}
                     </div>

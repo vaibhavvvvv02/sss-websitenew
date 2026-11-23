@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { motion, useInView } from 'framer-motion'
 import {
-  CheckCircle2, ChevronRight, PhoneCall, ArrowLeft, Shield, Star,
+  CheckCircle2, PhoneCall, ArrowLeft, Shield, Star,
   Flame, Waves, Zap, Lock, Banknote, Building2, Scale, Landmark, Briefcase,
   Ship, Globe, FileText, HardHat, Hospital, RefreshCw,
   Package, Handshake, Truck, Microscope, Factory, Settings,
@@ -74,6 +74,115 @@ export default function ProductDetail() {
           from { transform: rotate(0deg); }
           to   { transform: rotate(360deg); }
         }
+        @media (prefers-reduced-motion: reduce) {
+          .sss-logo-watermark { animation: none !important; }
+        }
+
+        /* ───────────────────────────────────────────
+           TABLE — horizontal scroll on all screens
+           where it doesn't fit
+        ─────────────────────────────────────────── */
+        .pd-table-wrap {
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          border-radius: 16px;
+          border: 1.5px solid #e5e7eb;
+          box-shadow: 0 2px 10px rgba(17,24,39,0.06);
+        }
+        .pd-table-wrap table {
+          min-width: 460px;
+          width: 100%;
+          border-collapse: collapse;
+        }
+        .pd-table-wrap td:first-child {
+          white-space: normal;
+          min-width: 120px;
+          max-width: 160px;
+        }
+        .pd-table-wrap td,
+        .pd-table-wrap th {
+          word-break: break-word;
+        }
+
+        /* ───────────────────────────────────────────
+           TABLET  768px – 1023px
+        ─────────────────────────────────────────── */
+        @media (max-width: 1023px) {
+          /* content image centers on tablet */
+          .pd-content-img {
+            justify-content: center !important;
+            margin-top: 0 !important;
+          }
+          .pd-content-img img {
+            max-width: 55% !important;
+            margin-top: 0 !important;
+          }
+          /* coverage section two-col stacks on tablet */
+          .pd-coverage-grid {
+            grid-template-columns: 1fr !important;
+            gap: 32px !important;
+          }
+        }
+
+        /* ───────────────────────────────────────────
+           LARGE MOBILE  481px – 767px
+        ─────────────────────────────────────────── */
+        @media (max-width: 767px) {
+          /* stats strip tighter gap */
+          .pd-stats-row { gap: 20px 28px !important; }
+          /* highlight cards smaller padding */
+          .pd-hl-card { padding: 24px 18px !important; }
+          /* content image */
+          .pd-content-img img { max-width: 70% !important; }
+          /* coverage heading smaller */
+          .pd-coverage-title { font-size: 20px !important; }
+          /* bottom CTA section padding */
+          .pd-bottom-cta { padding: 48px 20px !important; }
+          /* advisor row center text */
+          .pd-advisor-row { text-align: center !important; }
+          .pd-advisor-btns { justify-content: center !important; }
+        }
+
+        /* ───────────────────────────────────────────
+           MOBILE  ≤ 480px
+        ─────────────────────────────────────────── */
+        @media (max-width: 480px) {
+          /* hero padding */
+          .pd-hero { padding-top: 40px !important; padding-bottom: 48px !important; }
+          /* hero CTA buttons full-width stack */
+          .pd-hero-btns { flex-direction: column !important; align-items: stretch !important; }
+          .pd-hero-btns a { width: 100% !important; justify-content: center !important; }
+          /* stats */
+          .pd-stats-row { gap: 16px 20px !important; }
+          .pd-stats-value { font-size: 22px !important; }
+          /* highlights */
+          .pd-hl-card { padding: 18px 14px !important; }
+          .pd-hl-title { font-size: 14px !important; }
+          .pd-hl-desc  { font-size: 12.5px !important; }
+          /* content section padding */
+          .pd-content-section { padding-top: 32px !important; padding-bottom: 32px !important; }
+          .pd-content-img img { max-width: 85% !important; }
+          /* coverage */
+          .pd-coverage-title { font-size: 17px !important; }
+          .pd-coverage-section { padding-top: 32px !important; padding-bottom: 32px !important; }
+          .pd-addon-title { font-size: 16px !important; }
+          .pd-cta-card { padding: 20px 16px !important; }
+          /* bottom CTA */
+          .pd-bottom-cta { padding: 40px 16px !important; }
+          .pd-cta-btns { flex-direction: column !important; align-items: stretch !important; }
+          .pd-cta-btns a { width: 100% !important; justify-content: center !important; }
+          .pd-trust-badges { gap: 10px 16px !important; }
+          /* breadcrumb wrap */
+          .pd-breadcrumb { flex-wrap: wrap !important; gap: 4px !important; font-size: 11px !important; }
+        }
+
+        /* ───────────────────────────────────────────
+           VERY SMALL  ≤ 360px
+        ─────────────────────────────────────────── */
+        @media (max-width: 360px) {
+          .pd-stats-row { flex-direction: column !important; align-items: center !important; gap: 16px !important; }
+          .pd-hl-card { padding: 16px 12px !important; }
+        }
       `}</style>
       <Helmet>
         <title>{product.name} | SSS Risk Management & Insurance Brokers</title>
@@ -81,7 +190,7 @@ export default function ProductDetail() {
       </Helmet>
 
       {/* ── Hero ── */}
-      <section className="relative overflow-hidden pt-16 pb-20">
+      <section className="pd-hero relative overflow-hidden pt-16 pb-20">
         {/* Tricolor background */}
         <div className="absolute inset-0" style={{ background:'linear-gradient(135deg, rgba(255,107,0,0.18) 0%, rgba(255,160,60,0.10) 18%, rgba(255,255,255,0.98) 40%, rgba(255,255,255,1) 50%, rgba(220,245,225,0.85) 72%, rgba(46,125,50,0.20) 100%)' }} />
         {/* Radial blobs */}
@@ -93,22 +202,11 @@ export default function ProductDetail() {
         <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-white pointer-events-none z-10" />
         {/* SSS logo watermark */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
-          <img src="/assets/sss.png" alt="" className="w-[480px] h-[480px] object-contain" style={{ opacity: 0.07, animation: 'sssLogoSpin 20s linear infinite' }} />
+          <img src="/assets/sss.png" alt="" className="sss-logo-watermark w-[480px] h-[480px] object-contain" style={{ opacity: 0.07, animation: 'sssLogoSpin 20s linear infinite' }} />
         </div>
 
         {/* Content */}
         <div className="relative z-20 text-center px-6 max-w-[720px] mx-auto">
-          {/* Breadcrumb */}
-          <motion.div
-            className="flex items-center justify-center gap-1.5 text-[13px] text-gray-500 mb-5"
-            initial={{ opacity:0 }} animate={{ opacity:1 }} transition={{ duration:0.5, ease:EASE }}>
-            <Link to="/"        className="no-underline text-gray-400 hover:text-brand-orange transition-colors duration-500">Home</Link>
-            <ChevronRight size={12} className="text-gray-300" />
-            <Link to="/products" className="no-underline text-gray-400 hover:text-brand-orange transition-colors duration-500">Products</Link>
-            <ChevronRight size={12} className="text-gray-300" />
-            <span className="text-gray-600 font-medium">{product.name}</span>
-          </motion.div>
-
           {/* Category badge */}
           <motion.div
             className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full font-inter text-[11px] font-bold tracking-[1.5px] uppercase mb-4 border"
@@ -147,7 +245,7 @@ export default function ProductDetail() {
 
           {/* CTA buttons */}
           <motion.div
-            className="flex flex-wrap gap-3 justify-center"
+            className="pd-hero-btns flex flex-wrap gap-3 justify-center"
             initial={{ opacity:0, y:16 }} animate={{ opacity:1, y:0 }}
             transition={{ delay:0.5, duration:0.5, ease:EASE }}>
             <Link to="/get-quote"
@@ -164,13 +262,13 @@ export default function ProductDetail() {
 
       {/* ── Stats Strip ── */}
       <div className="relative overflow-hidden py-7 bg-white" ref={statsRef}>
-        <div className="max-w-[1200px] mx-auto px-6 flex items-center justify-center gap-16 flex-wrap">
+        <div className="pd-stats-row max-w-[1200px] mx-auto px-6 flex items-center justify-center gap-16 flex-wrap">
           {product.stats.map((s, i) => (
             <motion.div key={s.label} className="text-center"
               initial={{ opacity: 0, y: 16 }}
               animate={statsInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: i * 0.1, duration: 0.65, ease: EASE }}>
-              <div className="font-poppins font-extrabold text-[28px] text-brand-orange leading-none mb-1">{s.value}</div>
+              <div className="pd-stats-value font-poppins font-extrabold text-[28px] text-brand-orange leading-none mb-1">{s.value}</div>
               <div className="font-inter text-[13px] text-gray-600">{s.label}</div>
             </motion.div>
           ))}
@@ -203,7 +301,7 @@ export default function ProductDetail() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {product.highlights.map((h, i) => (
               <motion.div key={h.title}
-                className="group bg-white border-[1.5px] border-gray-200 rounded-2xl p-8 text-center transition-all duration-500 ease-smooth hover:shadow-apple-lg hover:-translate-y-1"
+                className="pd-hl-card group bg-white border-[1.5px] border-gray-200 rounded-2xl p-8 text-center transition-all duration-500 ease-smooth hover:shadow-apple-lg hover:-translate-y-1"
                 style={{ '--hover-border': accent } as React.CSSProperties}
                 initial={{ opacity: 0, y: 28 }}
                 animate={hlInView ? { opacity: 1, y: 0 } : {}}
@@ -214,8 +312,8 @@ export default function ProductDetail() {
                   style={{ background: `${accent}15` }}>
                   <HIcon name={h.icon} size={28} color={accent} />
                 </div>
-                <div className="font-poppins font-bold text-[16px] text-gray-900 mb-2">{h.title}</div>
-                <p className="font-inter text-[13.5px] text-gray-500 leading-relaxed">{h.desc}</p>
+                <div className="pd-hl-title font-poppins font-bold text-[16px] text-gray-900 mb-2">{h.title}</div>
+                <p className="pd-hl-desc font-inter text-[13.5px] text-gray-500 leading-relaxed">{h.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -223,7 +321,7 @@ export default function ProductDetail() {
       </section>
 
       {/* ── Two-col: description + features / image ── */}
-      <section className="py-14 bg-white" ref={contentRef}>
+      <section className="pd-content-section py-14 bg-white" ref={contentRef}>
         <div className="max-w-[1280px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-14 items-start">
 
           {/* Left — description + features + add-ons */}
@@ -282,7 +380,7 @@ export default function ProductDetail() {
 
           {/* Right — image, aligned top-right */}
           <motion.div
-            className="flex items-start justify-end"
+            className="pd-content-img flex items-start justify-end"
             initial={{ opacity: 0, x: 32 }}
             animate={contentInView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: 0.15, duration: 0.8, ease: EASE }}>
@@ -298,7 +396,7 @@ export default function ProductDetail() {
       </section>
 
       {/* ── Coverage Table + CTA ── */}
-      <section className="py-14 bg-white" ref={tableRef}>
+      <section className="pd-coverage-section py-14 bg-white" ref={tableRef}>
         <div className="max-w-[1200px] mx-auto px-6">
 
           {/* Section header */}
@@ -310,7 +408,7 @@ export default function ProductDetail() {
               style={{ background: `${accent}15`, color: accent }}>
               Coverage Details
             </span>
-            <h2 className="font-poppins font-extrabold text-[clamp(20px,2.5vw,28px)] text-gray-900 mb-3">
+            <h2 className="pd-coverage-title font-poppins font-extrabold text-[clamp(20px,2.5vw,28px)] text-gray-900 mb-3">
               Insurance <span className="text-brand-orange">Categories &amp; Key Features</span>
             </h2>
             <div className="flex items-center justify-center gap-2.5">
@@ -320,14 +418,14 @@ export default function ProductDetail() {
             </div>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <div className="pd-coverage-grid grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
 
             {/* Add-ons + inline CTA */}
             <motion.div
               initial={{ opacity: 0, x: -28 }}
               animate={tableInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.75, ease: EASE }}>
-              <h3 className="font-poppins font-bold text-[20px] text-gray-900 mb-5">Add-Ons for {product.name}</h3>
+              <h3 className="pd-addon-title font-poppins font-bold text-[20px] text-gray-900 mb-5">Add-Ons for {product.name}</h3>
               <div className="flex flex-wrap gap-2.5 mb-9">
                 {product.addOns.map((a, i) => (
                   <motion.div key={a}
@@ -344,7 +442,7 @@ export default function ProductDetail() {
 
               {/* Inline CTA card */}
               <motion.div
-                className="p-7 rounded-2xl border-[1.5px]"
+                className="pd-cta-card p-7 rounded-2xl border-[1.5px]"
                 style={{ background: `linear-gradient(135deg, ${accent}12 0%, ${accent}06 100%)`, borderColor: `${accent}25` }}
                 initial={{ opacity: 0, y: 16 }}
                 animate={tableInView ? { opacity: 1, y: 0 } : {}}
@@ -365,7 +463,7 @@ export default function ProductDetail() {
               initial={{ opacity: 0, x: 28 }}
               animate={tableInView ? { opacity: 1, x: 0 } : {}}
               transition={{ delay: 0.1, duration: 0.75, ease: EASE }}>
-              <div className="rounded-2xl overflow-hidden border-[1.5px] border-gray-200 shadow-apple">
+              <div className="pd-table-wrap">
                 <table className="w-full border-collapse">
                   <thead>
                     <tr style={{ background: accent }}>
@@ -380,7 +478,7 @@ export default function ProductDetail() {
                         initial={{ opacity: 0, x: 16 }}
                         animate={tableInView ? { opacity: 1, x: 0 } : {}}
                         transition={{ delay: i * 0.05, duration: 0.5, ease: EASE }}>
-                        <td className="px-5 py-3.5 font-inter font-semibold text-[13.5px] text-gray-900 whitespace-nowrap align-top">{row.category}</td>
+                        <td className="px-5 py-3.5 font-inter font-semibold text-[13.5px] text-gray-900 align-top">{row.category}</td>
                         <td className="px-5 py-3.5 font-inter text-[13.5px] text-gray-600 align-top leading-relaxed">{row.feature}</td>
                       </motion.tr>
                     ))}
@@ -392,9 +490,9 @@ export default function ProductDetail() {
         </div>
       </section>
 
-      {/* ── Bottom CTA + Advisor — Combined Premium Section ── */}
+      {/* ── Bottom CTA + Advisor ── */}
       <motion.section
-        className="relative overflow-hidden py-20 px-6"
+        className="pd-bottom-cta relative overflow-hidden py-20 px-6"
         style={{
           background: 'linear-gradient(135deg, rgba(255,107,0,0.18) 0%, rgba(255,160,60,0.10) 18%, rgba(255,255,255,0.98) 40%, rgba(255,255,255,1) 50%, rgba(220,245,225,0.85) 72%, rgba(46,125,50,0.20) 100%)',
         }}
@@ -433,7 +531,7 @@ export default function ProductDetail() {
             </p>
 
             {/* CTA buttons */}
-            <div className="flex flex-wrap gap-4 justify-center mb-10">
+            <div className="pd-cta-btns flex flex-wrap gap-4 justify-center mb-10">
               <Link to="/get-quote"
                 className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-poppins font-bold text-[14px] no-underline transition-all duration-500 hover:-translate-y-1 text-white"
                 style={{ background: accent, border: `2px solid ${accent}`, boxShadow: `0 8px 24px ${accent}40` }}>
@@ -446,7 +544,7 @@ export default function ProductDetail() {
             </div>
 
             {/* Trust badges */}
-            <div className="flex flex-wrap gap-6 justify-center">
+            <div className="pd-trust-badges flex flex-wrap gap-6 justify-center">
               {[
                 { icon: '🛡️', label: 'IRDAI Certified' },
                 { icon: '⚡', label: 'Instant Callback' },
@@ -470,7 +568,7 @@ export default function ProductDetail() {
 
           {/* Bottom — advisor + all products */}
           <motion.div
-            className="flex flex-col md:flex-row items-center justify-between gap-6"
+            className="pd-advisor-row flex flex-col md:flex-row items-center justify-between gap-6"
             initial={{ opacity: 0, y: 20 }}
             animate={advisorInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.2, duration: 0.65, ease: EASE }}>
@@ -482,7 +580,7 @@ export default function ProductDetail() {
                 Pan India presence · 10+ branches · IRDAI certified advisors
               </p>
             </div>
-            <div className="flex gap-3 flex-wrap">
+            <div className="pd-advisor-btns flex gap-3 flex-wrap">
               <Link to="/contact"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-poppins font-bold text-[13px] no-underline transition-all duration-500 hover:-translate-y-1 text-white"
                 style={{ background: accent, border: `1.5px solid ${accent}` }}>

@@ -5,8 +5,8 @@ import { Smile, Shield, Trophy, Phone } from 'lucide-react'
 const stats = [
   { Icon: Smile, bg: '#FFEEDD', ring: '#FFD9B3', value: 25000, suffix: 'K+', divide: 1000, label: 'Happy Customers', iconColor: '#FF6B00' },
   { Icon: Shield, bg: '#DDF5E8', ring: '#B7E8CB', value: 98, suffix: '%', divide: 1, label: 'Claim Settlement Ratio', iconColor: '#2E7D32' },
-  { Icon: Trophy, bg: '#E1EEFF', ring: '#BBD8FF', value: 15, suffix: '+', divide: 1, label: 'Years of Experience', iconColor: '#1a5276' },
-  { Icon: Phone, bg: '#FDE4F3', ring: '#F9C2E4', value: 24, suffix: '/7', divide: 1, label: 'Customer Support', noAnimate: true, iconColor: '#be185d' },
+  { Icon: Trophy, bg: '#E1EEFF', ring: '#BBD8FF', value: 35000, suffix: 'K+', divide: 1000, label: 'Policies Issued', iconColor: '#1a5276' },
+  { Icon: Phone, bg: '#FDE4F3', ring: '#F9C2E4', value: 300, suffix: '+', divide: 1, label: 'Collective Experience', noAnimate: true, iconColor: '#be185d' },
 ]
 
 function useCountUp(target: number, divide: number, active: boolean, duration = 1400) {

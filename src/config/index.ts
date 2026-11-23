@@ -4,8 +4,8 @@ export const API_URL  = import.meta.env.VITE_API_URL  || 'http://localhost:5000'
 
 export const CONTACT = {
   // ── General enquiries (Contact page, Footer, Products CTA) ──
-  phone:      '079 48928993',
-  phoneHref:  'tel:+917948928993',
+  phone:      '74860 38008',
+  phoneHref:  'tel:+917486038008',
   email:      'customercare@sssriskmanagement.com',
 
   // ── Claims team ──

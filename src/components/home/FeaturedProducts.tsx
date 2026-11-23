@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom'
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 
-const motorFeatures = ['Comprehensive Coverage', 'Own Damage Cover', 'Third Party Liability', 'Personal Accident Cover', 'Roadside Assistance']
-const healthFeatures = ['Hospitalisation Expenses', 'Pre & Post Hospitalisation', 'Day Care Procedures', 'Domiciliary Treatment', 'Maternity Benefits']
+const individualFeatures = ['Motor Insurance', 'Health & Mediclaim', 'Life & Term Insurance', 'Travel Insurance', 'Personal Accident Cover', 'Cyber Fraud Protection', 'Property Insurance']
+const corporateFeatures = ['Fire & Allied Perils', 'Marine Insurance', 'Liability Insurance', 'Workmen\'s Compensation', 'Project & CAR/EAR Insurance', 'Group Health Insurance', 'Package Insurance']
 
 export default function FeaturedProducts() {
   const ref = useRef(null)
@@ -13,7 +13,7 @@ export default function FeaturedProducts() {
     <section className="py-[72px] bg-white" ref={ref}>
       <div className="max-w-[1280px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-7">
 
-        {/* Motor Insurance Card */}
+        {/* Individual Insurance Card */}
         <motion.div
           className="group bg-white rounded-2xl overflow-hidden border-[1.5px] border-gray-200 transition-all duration-500 ease-smooth hover:border-brand-orange hover:shadow-orange"
           initial={{ opacity: 0, x: -40 }}
@@ -22,21 +22,22 @@ export default function FeaturedProducts() {
         >
           <div className="relative w-full h-[200px] overflow-hidden">
             <img
-              src="/assets/HomeAsset/motor_insurance_background_no_text_v2.jpg"
-              alt="Motor Insurance"
+              src="/assets/HomeAsset/individual_insurance_banner.png"
+              alt="Individual Insurance"
               className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+              style={{ filter: 'brightness(1.0) saturate(0.9)' }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-white to-transparent" />
+            <div className="absolute inset-0" style={{ background: 'rgba(255,255,255,0.15)' }} />
           </div>
           <div className="p-6 pb-7">
-            <div className="font-inter text-[11px] font-bold uppercase tracking-widest text-gray-400 mb-1.5">Protect Your Journey</div>
-            <div className="font-poppins font-bold text-[20px] text-gray-900 mb-2">Motor Insurance</div>
+            <div className="font-inter text-[11px] font-bold uppercase tracking-widest text-gray-400 mb-1.5">Protect Yourself & Family</div>
+            <div className="font-poppins font-bold text-[20px] text-gray-900 mb-2">Individual Insurance</div>
             <p className="font-inter text-[13.5px] text-gray-500 leading-relaxed mb-4">
-              Drive with confidence knowing your vehicle is comprehensively protected against accidents and emergencies.
+              Comprehensive protection plans for individuals and families — covering life, health, motor, travel and more.
             </p>
             <div className="h-px bg-gray-100 mb-4" />
             <ul className="flex flex-col gap-2.5 mb-5">
-              {motorFeatures.map((f) => (
+              {individualFeatures.map((f) => (
                 <li key={f} className="flex items-center gap-2.5 font-inter text-[13px] text-gray-700">
                   <span className="w-[18px] h-[18px] rounded-full bg-green-100 text-green-600 flex items-center justify-center text-[10px] font-bold flex-shrink-0">✓</span>
                   {f}
@@ -44,15 +45,15 @@ export default function FeaturedProducts() {
               ))}
             </ul>
             <Link
-              to="/products#motor"
+              to="/products"
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-brand-blue text-white rounded-lg font-poppins font-semibold text-[13px] no-underline transition-all duration-500 ease-smooth hover:bg-brand-blue-light hover:-translate-y-1"
             >
-              EXPLORE MOTOR INSURANCE →
+              EXPLORE INDIVIDUAL INSURANCE →
             </Link>
           </div>
         </motion.div>
 
-        {/* Health Insurance Card */}
+        {/* Corporate Insurance Card */}
         <motion.div
           className="group bg-white rounded-2xl overflow-hidden border-[1.5px] border-gray-200 transition-all duration-500 ease-smooth hover:border-brand-orange hover:shadow-orange"
           initial={{ opacity: 0, x: 40 }}
@@ -61,21 +62,22 @@ export default function FeaturedProducts() {
         >
           <div className="relative w-full h-[200px] overflow-hidden">
             <img
-              src="/assets/HomeAsset/health_insurance_background_no_text.jpg"
-              alt="Health Insurance"
+              src="/assets/HomeAsset/corporate_insurance_banner.png"
+              alt="Corporate Insurance"
               className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+              style={{ filter: 'brightness(1.0) saturate(0.9)' }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-white to-transparent" />
+            <div className="absolute inset-0" style={{ background: 'rgba(255,255,255,0.15)' }} />
           </div>
           <div className="p-6 pb-7">
-            <div className="font-inter text-[11px] font-bold uppercase tracking-widest text-gray-400 mb-1.5">Protect Your Health</div>
-            <div className="font-poppins font-bold text-[20px] text-gray-900 mb-2">Health Insurance</div>
+            <div className="font-inter text-[11px] font-bold uppercase tracking-widest text-gray-400 mb-1.5">Protect Your Business</div>
+            <div className="font-poppins font-bold text-[20px] text-gray-900 mb-2">Corporate Insurance</div>
             <p className="font-inter text-[13.5px] text-gray-500 leading-relaxed mb-4">
-              Quality healthcare for you and your loved ones — comprehensive coverage for every medical need.
+              Tailored insurance solutions for businesses of all sizes — protecting assets, employees and operations.
             </p>
             <div className="h-px bg-gray-100 mb-4" />
             <ul className="flex flex-col gap-2.5 mb-5">
-              {healthFeatures.map((f) => (
+              {corporateFeatures.map((f) => (
                 <li key={f} className="flex items-center gap-2.5 font-inter text-[13px] text-gray-700">
                   <span className="w-[18px] h-[18px] rounded-full bg-green-100 text-green-600 flex items-center justify-center text-[10px] font-bold flex-shrink-0">✓</span>
                   {f}
@@ -83,10 +85,10 @@ export default function FeaturedProducts() {
               ))}
             </ul>
             <Link
-              to="/products#health"
+              to="/products"
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-brand-orange text-white rounded-lg font-poppins font-semibold text-[13px] no-underline transition-all duration-500 ease-smooth hover:bg-brand-orange-dark hover:-translate-y-1"
             >
-              EXPLORE HEALTH INSURANCE →
+              EXPLORE CORPORATE INSURANCE →
             </Link>
           </div>
         </motion.div>

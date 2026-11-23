@@ -2,13 +2,13 @@
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { motion, useInView } from 'framer-motion'
-import { Gem, Users, GraduationCap, Handshake, Trophy } from 'lucide-react'
+import { Gem, Users, GraduationCap, Handshake, Trophy, Smile, ShieldCheck, CheckCircle2 } from 'lucide-react'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const EASE: any = [0.22, 1, 0.36, 1]
 
 const journeySteps = [
-  { year: '2020', label: 'Founded',   color: '#FF6B00', desc: 'SSS was founded with a vision to provide transparent and customer-first insurance solutions.' },
+  { year: '2021', label: 'Founded',   color: '#FF6B00', desc: 'SSS was founded with a vision to provide transparent and customer-first insurance solutions.' },
   { year: '2022', label: 'Growth',    color: '#e55f00', desc: 'Expanded our team and strengthened relationships with leading insurers across India.' },
   { year: '2024', label: 'Expansion', color: '#2E7D32', desc: 'Widened our service portfolio and established a pan-India presence across multiple cities.' },
   { year: '2026', label: 'Today',     color: '#1a5226', desc: 'Continuing to protect thousands of lives and businesses every day with trusted guidance.' },
@@ -22,9 +22,9 @@ const whyCards = [
 ]
 
 const statData = [
-  { icon: '😊', bg: '#FFEEDD', ring: '#FFD9B355', value: 25000, suffix: 'K+', divide: 1000, label: 'Happy Customers' },
-  { icon: '🛡️', bg: '#DDF5E8', ring: '#B7E8CB55', value: 15,    suffix: 'Y+', divide: 1,    label: 'Experience' },
-  { icon: '✅', bg: '#E1EEFF', ring: '#BBD8FF55', value: 25000, suffix: 'K+', divide: 1000, label: 'Policies' },
+  { icon: Smile,        color: '#FF6B00', bg: '#FFEEDD', ring: '#FFD9B355', value: 25000, suffix: 'K+', divide: 1000, label: 'Happy Customers' },
+  { icon: ShieldCheck,  color: '#2E7D32', bg: '#DDF5E8', ring: '#B7E8CB55', value: 35000, suffix: 'K+', divide: 1000, label: 'Policies Issued' },
+  { icon: CheckCircle2, color: '#1a5276', bg: '#E1EEFF', ring: '#BBD8FF55', value: 300,   suffix: '+',  divide: 1,    label: 'Collective Experience' },
 ]
 
 const values = [
@@ -38,7 +38,7 @@ const values = [
 const leaders = [
   {
     name: 'Ashvin Patel', role: 'Director', bgColor: '#FFF1E4',
-    img: '/assets/team/ashwin.jpg',
+    img: '/assets/team/ashwin.jpg.jpeg',
     bio: [
       'Ashvin Patel is an Electrical Engineer from L D College of Engineering. Having an inherent zeal of entrepreneurship, he acquired sizable experience from 1998 to 2008, working in India, Saudi Arabia, UAE, Oman and Singapore.',
       'He has overseen prestigious projects with ADCO Abu Dhabi, Kuwait Oil Refinery, Qatar Petroleum, Celanese Singapore, and Indian clients like ONGC, GAIL, HPCL, BPCL, Larsen & Toubro, and Reliance Industries.',
@@ -46,7 +46,7 @@ const leaders = [
   },
   {
     name: 'Satish Nikam', role: 'Principal Officer, CEO & MD', bgColor: '#ffffff',
-    img: '/assets/team/satis_sir.webp',
+    img: '/assets/team/satish.jpg',
     bio: [
       'An Electrical Engineer from LD College of Engineering & Gold Medalist in MBA Marketing from Gujarat University. He also holds a Fellowship from Insurance Institute of India.',
       'After working with ISRO, Arvind Mills, and Maruti Udyog, he spent 17+ years in Insurance with ICICI Lombard and SBI General. His last role was National Manager – Retail Broking at SBI Gen.',
@@ -90,8 +90,8 @@ function StatCard({ s, i, active }: { s: (typeof statData)[0]; i: number; active
       animate={active ? { opacity: 1, y: 0 } : {}}
       transition={{ delay: i * 0.12, duration: 0.6, ease: EASE }}
     >
-      <div className="w-[52px] h-[52px] rounded-[14px] flex items-center justify-center text-[22px] flex-shrink-0" style={{ background: s.bg, boxShadow: `0 0 0 6px ${s.ring}` }}>
-        {s.icon}
+      <div className="w-[52px] h-[52px] rounded-[14px] flex items-center justify-center flex-shrink-0" style={{ background: s.bg, boxShadow: `0 0 0 6px ${s.ring}` }}>
+        <s.icon size={24} color={s.color} strokeWidth={1.8} />
       </div>
       <div>
         <div className="font-poppins font-extrabold text-[27px] text-brand-orange leading-none tabular-nums">{count}{s.suffix}</div>
@@ -126,7 +126,7 @@ export default function OurStory() {
       `}</style>
       <Helmet>
         <title>Our Story | SSS Risk Management & Insurance Brokers</title>
-        <meta name="description" content="The story of SSS Risk Management — from our founding in 2020 to protecting 25,000+ customers across India." />
+        <meta name="description" content="The story of SSS Risk Management — from our founding in 2021 to protecting 25,000+ customers across India." />
       </Helmet>
 
       {/* ── Hero ── */}
@@ -140,15 +140,6 @@ export default function OurStory() {
           <img src="/assets/sss.png" alt="" className="w-[480px] h-[480px] object-contain" style={{ opacity: 0.07, animation: 'sssLogoSpin 20s linear infinite' }} />
         </div>
         <div className="relative z-20 text-center px-6 max-w-[720px] mx-auto">
-          {/* Breadcrumb */}
-          <motion.div className="flex items-center justify-center gap-1.5 text-[13px] text-gray-500 mb-5"
-            initial={{ opacity:0 }} animate={{ opacity:1 }} transition={{ duration:0.5, ease:EASE }}>
-            <Link to="/" className="no-underline text-gray-400 hover:text-brand-orange transition-colors duration-500">Home</Link>
-            <span className="text-gray-300">›</span>
-            <Link to="/about" className="no-underline text-gray-400 hover:text-brand-orange transition-colors duration-500">About Us</Link>
-            <span className="text-gray-300">›</span>
-            <span className="text-gray-600 font-medium">Our Story</span>
-          </motion.div>
           <motion.span className="inline-block bg-orange-50/80 text-brand-orange font-inter text-[11px] font-bold tracking-[1.5px] uppercase px-3.5 py-1.5 rounded-full mb-4 border border-orange-200"
             initial={{ opacity:0, y:16 }} animate={{ opacity:1, y:0 }} transition={{ delay:0.05, duration:0.5, ease:EASE }}>
             ABOUT US
@@ -167,7 +158,7 @@ export default function OurStory() {
           </div>
           <motion.p className="font-inter text-[15px] text-gray-500 leading-relaxed mb-8 max-w-[520px] mx-auto"
             initial={{ opacity:0, y:16 }} animate={{ opacity:1, y:0 }} transition={{ delay:0.35, duration:0.55, ease:EASE }}>
-            From our founding in 2020 to protecting 25,000+ customers — driven by one goal, protecting what matters most to you.
+            From our founding in 2021 to protecting 25,000+ customers — driven by one goal, protecting what matters most to you.
           </motion.p>
           <motion.div className="flex flex-wrap gap-3 justify-center"
             initial={{ opacity:0, y:16 }} animate={{ opacity:1, y:0 }} transition={{ delay:0.5, duration:0.5, ease:EASE }}>
@@ -308,7 +299,7 @@ export default function OurStory() {
                 animate={teamInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.15, duration: 0.6, ease: EASE }}
               >
-                <div className="w-full h-[320px] overflow-hidden" style={{ background: l.bgColor }}>
+                <div className="w-full h-[400px] overflow-hidden" style={{ background: l.bgColor }}>
                   <img src={l.img} alt={l.name} className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
                 </div>
                 <div className="p-6 pb-7">
@@ -327,20 +318,23 @@ export default function OurStory() {
 
       {/* ── CTA ── */}
       <motion.section
-        className="py-12 px-6 bg-[#1B2A4A]"
+        className="relative py-12 px-6 overflow-hidden"
+        style={{ background: 'linear-gradient(135deg, rgba(255,107,0,0.18) 0%, rgba(255,160,60,0.10) 18%, rgba(255,255,255,0.98) 40%, rgba(255,255,255,1) 50%, rgba(220,245,225,0.85) 72%, rgba(46,125,50,0.20) 100%)' }}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6, ease: EASE }}
         viewport={{ once: true }}
       >
-        <div className="max-w-[1280px] mx-auto flex items-center justify-between gap-8 flex-wrap">
+        <div className="absolute top-[-60px] left-[-60px] w-[280px] h-[280px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(255,107,0,0.12) 0%, transparent 70%)' }} />
+        <div className="absolute bottom-[-60px] right-[-60px] w-[280px] h-[280px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(46,125,50,0.12) 0%, transparent 70%)' }} />
+        <div className="relative z-10 max-w-[1280px] mx-auto flex items-center justify-between gap-8 flex-wrap">
           <div>
-            <h3 className="font-poppins font-bold text-[clamp(18px,2.5vw,24px)] text-white mb-1.5">Let's Protect What Matters to You</h3>
-            <p className="font-inter text-[14px] text-white/70">Talk to our experts and find the right insurance solution.</p>
+            <h3 className="font-poppins font-bold text-[clamp(18px,2.5vw,24px)] text-[#1B2A4A] mb-1.5">Let's Protect What Matters to You</h3>
+            <p className="font-inter text-[14px] text-gray-500">Talk to our experts and find the right insurance solution.</p>
           </div>
           <div className="flex gap-3.5 flex-wrap">
             <Link to="/get-quote" className="inline-flex items-center gap-2 px-6 py-3 bg-brand-orange text-white rounded-lg font-poppins font-bold text-[13px] no-underline transition-all hover:bg-brand-orange-dark hover:-translate-y-1 whitespace-nowrap">GET A QUOTE →</Link>
-            <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 bg-transparent text-white border-2 border-white/50 rounded-lg font-poppins font-bold text-[13px] no-underline transition-all hover:bg-white/10 hover:-translate-y-1 whitespace-nowrap">CONTACT US →</Link>
+            <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 bg-white text-[#1B2A4A] border-2 border-[#1B2A4A] rounded-lg font-poppins font-bold text-[13px] no-underline transition-all hover:bg-[#1B2A4A] hover:text-white hover:-translate-y-1 whitespace-nowrap">CONTACT US →</Link>
           </div>
         </div>
       </motion.section>

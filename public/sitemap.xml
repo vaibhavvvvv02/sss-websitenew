@@ -1,70 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <url>
-    <loc>https://sssinsurance.in/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <!-- Main Pages -->
+  <url><loc>https://sssinsurance.in/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://sssinsurance.in/about</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sssinsurance.in/about/story</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sssinsurance.in/about/team</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sssinsurance.in/products</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sssinsurance.in/claims</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sssinsurance.in/gallery</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://sssinsurance.in/contact</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sssinsurance.in/get-quote</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sssinsurance.in/become-a-posp</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sssinsurance.in/career</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://sssinsurance.in/privacy-policy</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://sssinsurance.in/terms-conditions</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
 
-  <url>
-    <loc>https://sssinsurance.in/about</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <!-- Corporate Insurance Products -->
+  <url><loc>https://sssinsurance.in/products/fire-insurance</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sssinsurance.in/products/burglary-insurance</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sssinsurance.in/products/liability-insurance</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sssinsurance.in/products/marine-insurance</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sssinsurance.in/products/workmen-compensation</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sssinsurance.in/products/project-insurance</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sssinsurance.in/products/contractor-all-risk</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sssinsurance.in/products/erection-all-risk</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sssinsurance.in/products/plant-machinery</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sssinsurance.in/products/boiler-pressure</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sssinsurance.in/products/package-insurance</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sssinsurance.in/products/group-health-insurance</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sssinsurance.in/products/group-personal-accident-insurance</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sssinsurance.in/products/group-travel-insurance</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sssinsurance.in/products/entertainment-insurance</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sssinsurance.in/products/surety-bond</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
-  <url>
-    <loc>https://sssinsurance.in/about/story</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://sssinsurance.in/about/team</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://sssinsurance.in/products</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://sssinsurance.in/claims</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://sssinsurance.in/gallery</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://sssinsurance.in/contact</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://sssinsurance.in/get-quote</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://sssinsurance.in/become-a-posp</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://sssinsurance.in/career</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  <!-- Individual Insurance Products -->
+  <url><loc>https://sssinsurance.in/products/four-wheeler</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sssinsurance.in/products/two-wheeler</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sssinsurance.in/products/commercial-vehicle</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sssinsurance.in/products/personal-accident</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sssinsurance.in/products/travel</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sssinsurance.in/products/property</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sssinsurance.in/products/cyber-fraud</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sssinsurance.in/products/individual-mediclaim</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sssinsurance.in/products/family-health</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sssinsurance.in/products/family-floater</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sssinsurance.in/products/senior-citizen</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sssinsurance.in/products/critical-illness</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sssinsurance.in/products/top-up</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sssinsurance.in/products/term-life</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sssinsurance.in/products/whole-life</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sssinsurance.in/products/unit-linked</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sssinsurance.in/products/retirement-plan</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sssinsurance.in/products/group-plan</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sssinsurance.in/products/pension-plan</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sssinsurance.in/products/savings-investment</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
 </urlset>

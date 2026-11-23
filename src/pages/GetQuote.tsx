@@ -206,18 +206,18 @@ export default function GetQuote() {
           <div className="relative z-20 text-center px-6 max-w-[720px] mx-auto">
             <motion.span className="inline-block bg-orange-50/80 text-brand-orange font-inter text-[11px] font-bold tracking-[1.5px] uppercase px-3.5 py-1.5 rounded-full mb-4 border border-orange-200"
               initial={{ opacity:0, y:16 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.5, ease:EASE }}>
-              FREE QUOTE
+              GET A QUOTE
             </motion.span>
             <div className="overflow-hidden mb-1">
               <motion.h1 className="font-poppins font-extrabold text-[clamp(28px,4vw,46px)] text-[#1B2A4A]"
                 initial={{ y:'110%' }} animate={{ y:0 }} transition={{ delay:0.1, duration:0.7, ease:EASE }}>
-                Get a
+                Get Your Customized
               </motion.h1>
             </div>
             <div className="overflow-hidden mb-5">
               <motion.h1 className="font-poppins font-extrabold text-[clamp(28px,4vw,46px)] text-brand-orange"
                 initial={{ y:'110%' }} animate={{ y:0 }} transition={{ delay:0.2, duration:0.7, ease:EASE }}>
-                Free Quote
+                Quote Today
               </motion.h1>
             </div>
             <motion.p className="font-inter text-[15px] text-gray-500 leading-relaxed max-w-[520px] mx-auto"

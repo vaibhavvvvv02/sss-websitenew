@@ -26,8 +26,8 @@ const processSteps = [
 
 const intimateChannels = [
   { Icon:Globe,         color:'#2E7D32', bg:'#E7F5EA', label:'Online Claim Form', desc:'Fill our simple online claim form.',       action:'FILE ONLINE',  href:'#claim-form' },
-  { Icon:Phone,         color:'#FF6B00', bg:'#FFF1E4', label:'Call Us',           desc:'Speak directly to our claims support.',    action:'CALL NOW',    href:'tel:+917486020672' },
-  { Icon:MessageCircle, color:'#25D366', bg:'#E7F5EA', label:'WhatsApp',          desc:'Share your claim details on WhatsApp.',    action:'CHAT NOW',    href:'https://wa.me/917486020672' },
+  { Icon:Phone,         color:'#FF6B00', bg:'#FFF1E4', label:'Call Us',           desc:'Speak directly to our claims support.',    action:'CALL NOW',    href:'tel:+917486038008' },
+  { Icon:MessageCircle, color:'#25D366', bg:'#E7F5EA', label:'WhatsApp',          desc:'Share your claim details on WhatsApp.',    action:'CHAT NOW',    href:'https://wa.me/919712961499' },
   { Icon:Mail,          color:'#1a5276', bg:'#EBF5FB', label:'Email Us',          desc:'Send claim details and documents by email.',action:'SEND EMAIL',  href:'mailto:claim@sssriskmanagement.com' },
 ]
 
@@ -155,6 +155,15 @@ export default function Claims() {
     window.addEventListener('keydown', h); return () => window.removeEventListener('keydown', h)
   }, [])
 
+  useEffect(() => {
+    if (window.location.hash === '#claim-form') {
+      setModal('form')
+      setTimeout(() => {
+        document.getElementById('claim-form')?.scrollIntoView({ behavior: 'smooth' })
+      }, 100)
+    }
+  }, [])
+
   const handleChange = (field: keyof ClaimFormState, val: string) => {
     setFormData(p => ({ ...p, [field]: val }))
     if (formErrors[field as keyof ClaimFormErrors]) setFormErrors(p => ({ ...p, [field]: undefined }))
@@ -195,7 +204,7 @@ export default function Claims() {
       </Helmet>
 
       {/* ── Hero ── */}
-      <section className="relative overflow-hidden pt-16 pb-20">
+      <section id="claim-form" className="relative overflow-hidden pt-16 pb-20">
         <div className="absolute inset-0"
           style={{ background:'linear-gradient(135deg, rgba(255,107,0,0.18) 0%, rgba(255,160,60,0.10) 18%, rgba(255,255,255,0.98) 40%, rgba(255,255,255,1) 50%, rgba(220,245,225,0.85) 72%, rgba(46,125,50,0.20) 100%)' }} />
         <div className="absolute top-[-60px] left-[-60px] w-[320px] h-[320px] rounded-full pointer-events-none"
@@ -575,27 +584,27 @@ export default function Claims() {
         {modal === 'grievance' && (
           <ClaimsModal id="grievance" label="Claim Grievance" onClose={() => setModal(null)}>
             <div className="flex flex-col gap-4">
-              {[
-                { label:'Claims Helpline', val:'+91 74860 20672', href:'tel:+917486020672', Icon:Phone, color:'#FF6B00', bg:'#FFF1E4' },
-                { label:'Email Claims',    val:'claim@sssriskmanagement.com', href:'mailto:claim@sssriskmanagement.com', Icon:Mail, color:'#1a5276', bg:'#EBF5FB' },
-                { label:'WhatsApp Claims', val:'+91 74860 20672', href:'https://wa.me/917486020672', Icon:MessageCircle, color:'#25D366', bg:'#E7F5EA' },
-              ].map(c => (
-                <a key={c.label} href={c.href} target="_blank" rel="noreferrer"
-                  className="flex items-center gap-4 p-4 bg-gray-50 rounded-xl border border-gray-100 no-underline hover:border-brand-orange hover:bg-orange-50 transition-all group">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background:c.bg }}>
-                    <c.Icon size={22} color={c.color} strokeWidth={1.8} />
-                  </div>
-                  <div>
-                    <div className="font-poppins font-bold text-[14px] text-gray-900">{c.label}</div>
-                    <div className="font-inter text-[13px] text-gray-500 mt-0.5 group-hover:text-brand-orange transition-colors">{c.val}</div>
-                  </div>
-                </a>
-              ))}
-              <div className="mt-2 p-4 bg-orange-50 rounded-xl border border-orange-200">
-                <p className="font-inter text-[12.5px] text-gray-600 leading-relaxed">
-                  <strong className="text-brand-orange">Principal Officer:</strong> Mr. Satish Nikam<br />
-                  <strong className="text-brand-orange">Email:</strong> principal@sssriskmanagement.com
-                </p>
+              <div className="flex flex-col gap-2">
+                <div className="font-poppins font-bold text-[14px] text-gray-900">Mimansa Surati</div>
+                <a href="tel:+917486020672" className="font-inter text-[13px] text-brand-orange no-underline hover:underline">+91 7486020672</a>
+                <a href="mailto:mimansa.surati@sssriskmanagement.com" className="font-inter text-[13px] text-brand-orange no-underline hover:underline">mimansa.surati@sssriskmanagement.com</a>
+              </div>
+              <div className="h-px bg-gray-100" />
+              <div className="flex flex-col gap-2">
+                <div className="font-poppins font-bold text-[14px] text-gray-900">Ashish Chudgar</div>
+                <a href="tel:+919974722234" className="font-inter text-[13px] text-brand-orange no-underline hover:underline">+91 9974722234</a>
+                <a href="mailto:ashish.chudgar@sssriskmanagement.com" className="font-inter text-[13px] text-brand-orange no-underline hover:underline">ashish.chudgar@sssriskmanagement.com</a>
+              </div>
+              <div className="h-px bg-gray-100" />
+              <div className="flex flex-col gap-2">
+                <div className="font-poppins font-bold text-[14px] text-gray-900">Pradeep Gandhi</div>
+                <a href="tel:+919227981791" className="font-inter text-[13px] text-brand-orange no-underline hover:underline">+91 92279 81791</a>
+                <a href="mailto:pradeep.gandhi@sssriskmanagement.com" className="font-inter text-[13px] text-brand-orange no-underline hover:underline">pradeep.gandhi@sssriskmanagement.com</a>
+              </div>
+              <div className="h-px bg-gray-100" />
+              <div className="flex flex-col gap-2">
+                <div className="font-inter text-[13px] text-gray-600">Mail us on</div>
+                <a href="mailto:claim@sssriskmanagement.com" className="font-inter text-[13px] text-brand-orange no-underline hover:underline">claim@SSSRISKMANAGEMENT.COM</a>
               </div>
             </div>
           </ClaimsModal>
