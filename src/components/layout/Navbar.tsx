@@ -63,7 +63,7 @@ export default function Navbar() {
 
           {/* Logo */}
           <Link to="/" className="flex items-center flex-shrink-0 ml-4 lg:ml-8">
-            <img src="/assets/sss_logo.png" alt="SSS Logo" className="w-16 h-16 md:w-24 md:h-24 lg:w-40 lg:h-40 object-contain" />
+            <img src="/assets/sss_logo.png" alt="SSS Logo" className="w-20 h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 object-contain" />
           </Link>
 
           {/* Desktop links */}
@@ -179,8 +179,8 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{    opacity: 0, height: 0      }}
             transition={{ duration: 0.75, ease: EASE }}
-            className="fixed top-[90px] left-0 right-0 bg-white shadow-apple-lg z-[999] overflow-hidden border-t border-gray-100"
-            style={{ maxHeight: 'calc(100vh - 90px)', overflowY: 'auto' }}
+            className="fixed top-[80px] left-0 right-0 bg-white shadow-apple-lg z-[999] overflow-hidden border-t border-gray-100"
+            style={{ maxHeight: 'calc(100vh - 80px)', overflowY: 'auto' }}
           >
             {navLinks.map((item) => (
               <div key={item.label}>
@@ -255,7 +255,7 @@ export default function Navbar() {
         )}
       </AnimatePresence>
 
-      <div className="h-[90px]" />
+      <div className="h-[80px]" />
     </>
   )
 }

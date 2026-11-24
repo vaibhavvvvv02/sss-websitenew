@@ -174,14 +174,14 @@ export default function Career() {
     setLoading(true)
     try {
       // Send as a quote with career source so the backend can route it
-      const { submitQuote } = await import('../services/contactService')
-      await submitQuote({
-        name:    form.name.trim(),
-        phone:   form.phone.trim(),
-        email:   form.email.trim() || undefined,
-        type:    `Career Application – ${form.role}`,
-        message: `Experience: ${form.exp || 'Not specified'}. ${form.message}`.trim(),
-        source:  'career-page',
+      const { submitCareer } = await import('../services/contactService')
+      await submitCareer({
+        name: form.name.trim(),
+        phone: form.phone.trim(),
+        email: form.email.trim() || undefined,
+        exp: form.exp || undefined,
+        role: form.role || undefined,
+        message: form.message.trim() || undefined,
       })
       setSent(true)
     } catch {

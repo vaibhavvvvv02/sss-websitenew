@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { motion } from 'framer-motion'
 import { Phone, Mail, MapPin, MessageCircle, Loader2, AlertCircle, ShieldCheck, Star } from 'lucide-react'
-import { submitQuote } from '../services/contactService'
+import { submitContact } from '../services/contactService'
 import { CONTACT, SOCIAL, SITE_NAME } from '../config'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -137,13 +137,10 @@ export default function Contact() {
     if (Object.keys(errs).length > 0) { setErrors(errs); return }
     setLoading(true)
     try {
-      await submitQuote({
+      await submitContact({
         name:    form.name.trim(),
-        phone:   form.phone.trim(),
         email:   form.email.trim() || undefined,
-        type:    form.subject.trim(),
-        message: form.message.trim() || undefined,
-        source:  'contact-page',
+        message: `Subject: ${form.subject.trim()}. ${form.message.trim()}`.trim(),
       })
       setSent(true)
     } catch {
@@ -486,8 +483,8 @@ export default function Contact() {
                     </div>
                     <div className="ct-branch-city">{branch.city}</div>
                     <div className="ct-branch-addr">{branch.address}</div>
-                    <a href={`mailto:${CONTACT.email}`} className="ct-branch-email">
-                      <Mail size={13} /> {CONTACT.email}
+                    <a href={`mailto:${branch.email || CONTACT.email}`} className="ct-branch-email">
+                      <Mail size={13} /> {branch.email || CONTACT.email}
                     </a>
                     <a href={branch.mapUrl} target="_blank" rel="noreferrer" className="ct-branch-dir">
                       <MapPin size={14} /> GET DIRECTIONS →
@@ -507,8 +504,8 @@ export default function Contact() {
                   </div>
                   <div className="ct-branch-city dark">{branch.city}</div>
                   <div className="ct-branch-addr">{branch.address}</div>
-                  <a href={`mailto:${CONTACT.email}`} className="ct-branch-email">
-                    <Mail size={12} /> {CONTACT.email}
+                  <a href={`mailto:${branch.email || CONTACT.email}`} className="ct-branch-email">
+                    <Mail size={12} /> {branch.email || CONTACT.email}
                   </a>
                   <a href={branch.mapUrl} target="_blank" rel="noreferrer" className="ct-branch-dir outline">
                     <MapPin size={13} /> DIRECTIONS →

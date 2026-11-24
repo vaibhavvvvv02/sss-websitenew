@@ -152,10 +152,6 @@ export default function Products() {
   const [qqSent,       setQqSent]       = useState(false)
   const [qqLoading,    setQqLoading]    = useState(false)
   const [qqError,      setQqError]      = useState('')
-  const [videoOverlay, setVideoOverlay] = useState(false)
-  const [pendingModal, setPendingModal] = useState<{ cat:CategoryId; product:Product }|null>(null)
-  const [videoProgress,setVideoProgress]= useState(0)
-  const videoTimerRef = React.useRef<ReturnType<typeof setInterval>|null>(null)
 
   const catRef   = useRef(null); const catInView   = useInView(catRef,   { once:true, margin:'-80px' })
   const gridRef  = useRef(null); const gridInView  = useInView(gridRef,  { once:true, margin:'-80px' })
@@ -164,33 +160,9 @@ export default function Products() {
   const quoteRef = useRef(null); const quoteInView = useInView(quoteRef, { once:true, margin:'-80px' })
 
   const handleProductClick = (cat:CategoryId, product:Product) => {
-    setPendingModal({ cat, product })
-    setVideoOverlay(true)
-    setVideoProgress(0)
-    let elapsed = 0
-    videoTimerRef.current = setInterval(() => {
-      elapsed += 100
-      setVideoProgress(Math.min((elapsed/10000)*100, 100))
-      if (elapsed >= 10000) {
-        clearInterval(videoTimerRef.current!)
-        setVideoOverlay(false)
-        setVideoProgress(0)
-        const slug = labelToSlug[product.label]
-        if (slug) navigate(`/products/${slug}`)
-        else setModal({ cat, product })
-      }
-    }, 100)
-  }
-
-  const skipVideo = () => {
-    if (videoTimerRef.current) clearInterval(videoTimerRef.current)
-    setVideoOverlay(false)
-    setVideoProgress(0)
-    if (pendingModal) {
-      const slug = labelToSlug[pendingModal.product.label]
-      if (slug) navigate(`/products/${slug}`)
-      else setModal(pendingModal)
-    }
+    const slug = labelToSlug[product.label]
+    if (slug) navigate(`/products/${slug}`)
+    else setModal({ cat, product })
   }
 
   useEffect(() => {
@@ -707,22 +679,6 @@ export default function Products() {
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* ── Video Intro Overlay ── */}
-      {videoOverlay && (
-        <div className="fixed inset-0 z-[9999] bg-black flex flex-col items-center justify-center">
-          <video src="/assets/ProductsAsset/watermark-removed-A_premium_10-15_second_3D_20261005115827.mp4"
-            autoPlay muted playsInline onEnded={skipVideo}
-            className="absolute inset-0 w-full h-full object-cover" />
-          <button onClick={skipVideo}
-            className="absolute bottom-10 right-8 bg-black/55 text-white border border-white/40 rounded-full px-6 py-2.5 font-poppins font-semibold text-[13px] cursor-pointer z-10 backdrop-blur-sm flex items-center gap-2 transition-all duration-500 hover:bg-black/80">
-            Skip →
-          </button>
-          <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/20 z-10">
-            <div className="h-full transition-all duration-100" style={{ width:`${videoProgress}%`, background:'linear-gradient(90deg, #FF9933, #138808)', borderRadius:2 }} />
-          </div>
-        </div>
-      )}
 
       {/* ── Product Detail Modal ── */}
       <AnimatePresence>

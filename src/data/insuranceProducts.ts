@@ -337,7 +337,7 @@ export const insuranceProducts: InsuranceProduct[] = [
     categoryColor: '#2E7D32',
     shortDescription: 'Coverage for all travelers in your group against accidents, medical emergencies, and trip disruptions on domestic and international trips.',
     longDescription: 'Group Travel Insurance ensures protection for every traveler in your group. From medical emergencies to trip disruptions, our plans give peace of mind and financial security on domestic and international trips. Ideal for corporate trips, school tours, and large group vacations — ensuring everyone stays protected during the journey.',
-    imageUrl: '/assets/corporate/fire.png',
+    imageUrl: '/assets/corporate/group-travel.png',
     highlights: [
       { icon: 'Plane', title: 'Flexible Group Plans', desc: 'Customize coverage for your group size, destination, and trip duration.' },
       { icon: 'Hospital', title: 'Medical Emergency Cover', desc: 'Covers hospitalization, treatment, and medical evacuation during travel.' },
@@ -363,7 +363,7 @@ export const insuranceProducts: InsuranceProduct[] = [
     categoryColor: '#2E7D32',
     shortDescription: 'Comprehensive protection for film shoots, concerts, and live events covering cancellation, equipment damage, cast non-appearance and third-party liability.',
     longDescription: 'Entertainment insurance provides financial security by covering losses from event cancellation, equipment damage, and cast non-appearance. It ensures that your production or event is protected against unexpected disruptions. Whether you\'re producing a film, hosting a concert, or organizing a live event, entertainment insurance safeguards your investment and helps you recover quickly from losses.',
-    imageUrl: '/assets/corporate/fire.png',
+    imageUrl: '/assets/corporate/entertainment.png',
     highlights: [
       { icon: 'FileText', title: 'Event Cancellation Cover', desc: 'Covers financial loss due to cancellation, postponement, or abandonment of an event.' },
       { icon: 'Users', title: 'Cast & Crew Protection', desc: 'Extends coverage for non-appearance of key cast members due to illness or injury.' },
@@ -389,7 +389,7 @@ export const insuranceProducts: InsuranceProduct[] = [
     categoryColor: '#2E7D32',
     shortDescription: 'A financial guarantee issued by an insurance company on behalf of a business ensuring fulfillment of contractual, financial, or operational obligations.',
     longDescription: 'A Surety Bond is a financial guarantee issued by an insurance company on behalf of a business or contractor in favor of another party. It guarantees that the applicant will fulfill their contractual, financial, or operational obligations as agreed. If the applicant fails to perform, the insurance company compensates the beneficiary and subsequently recovers the amount from the applicant. Surety Bonds serve as a reliable alternative to traditional Bank Guarantees.',
-    imageUrl: '/assets/corporate/fire.png',
+    imageUrl: '/assets/corporate/surety-bond.png',
     highlights: [
       { icon: 'ShieldCheck', title: 'Improves Working Capital', desc: 'Reduces financial burden and preserves banking limits for better liquidity.' },
       { icon: 'TrendingUp', title: 'Enables Business Growth', desc: 'Businesses reduce indirect costs associated with Bank Guarantees.' },

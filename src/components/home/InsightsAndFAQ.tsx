@@ -38,7 +38,7 @@ const faqs = [
   { q: 'How can I get an insurance quote?', a: 'Click "Get A Quote" on our website, call us directly, or visit our office. Our experts will guide you through the best options.' },
   { q: 'What types of insurance do you offer?', a: 'Motor, Health, Life, Home, Travel, Commercial insurance and Surety Bonds.' },
   { q: 'How does the claims process work?', a: 'Report your claim to us, submit required documents, and our team handles everything until settlement.' },
-  { q: 'How can I contact SSS?', a: 'Call 74860 38008, email customercare@sssriskmanagement.com, or use our contact form. Mon–Sat, 10AM–6PM.' },
+  { q: 'How can I contact SSS?', a: 'Call +91 6352 946 430, email customercare@sssriskmanagement.com, or use our contact form. Mon–Sat, 10AM–6PM.' },
 ]
 
 export default function InsightsAndFAQ() {

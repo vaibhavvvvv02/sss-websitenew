@@ -27,7 +27,7 @@ const processSteps = [
 const intimateChannels = [
   { Icon:Globe,         color:'#2E7D32', bg:'#E7F5EA', label:'Online Claim Form', desc:'Fill our simple online claim form.',       action:'FILE ONLINE',  href:'#claim-form' },
   { Icon:Phone,         color:'#FF6B00', bg:'#FFF1E4', label:'Call Us',           desc:'Speak directly to our claims support.',    action:'CALL NOW',    href:'tel:+917486038008' },
-  { Icon:MessageCircle, color:'#25D366', bg:'#E7F5EA', label:'WhatsApp',          desc:'Share your claim details on WhatsApp.',    action:'CHAT NOW',    href:'https://wa.me/919712961499' },
+  { Icon:MessageCircle, color:'#25D366', bg:'#E7F5EA', label:'WhatsApp',          desc:'Share your claim details on WhatsApp.',    action:'CHAT NOW',    href:'https://wa.me/917486020672' },
   { Icon:Mail,          color:'#1a5276', bg:'#EBF5FB', label:'Email Us',          desc:'Send claim details and documents by email.',action:'SEND EMAIL',  href:'mailto:claim@sssriskmanagement.com' },
 ]
 
@@ -175,7 +175,7 @@ export default function Claims() {
     if (Object.keys(errs).length > 0) { setFormErrors(errs); return }
     setFormLoading(true)
     try {
-      await submitClaim({ name:formData.name.trim(), phone:formData.phone.trim(), email:formData.email.trim()||undefined, type:formData.type, desc:formData.desc.trim()||undefined, source:'claims-page' })
+      await submitClaim({ name:formData.name.trim(), phone:formData.phone.trim(), email:formData.email.trim()||undefined, type:formData.type, desc:formData.desc.trim()||undefined })
       setFormSent(true)
     } catch { setFormApiErr('Something went wrong. Please call us at +91 74860 20672.') }
     finally { setFormLoading(false) }
@@ -253,7 +253,7 @@ export default function Claims() {
 
       {/* ── Intimate Channels ── */}
       <section className="py-12 bg-white" ref={chanRef}>
-        <div className="max-w-[1280px] mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-5">
+        <div className="max-w-[1280px] mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
           {intimateChannels.map((c, i) => (
             <motion.a key={c.label} href={c.href}
               className="group bg-white border-[1.5px] border-gray-200 rounded-2xl p-6 no-underline transition-all duration-500 ease-smooth hover:border-brand-orange hover:shadow-orange hover:-translate-y-1"
@@ -285,7 +285,7 @@ export default function Claims() {
               How the <span className="text-brand-orange">Claims Process Works</span>
             </h2>
           </motion.div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {processSteps.map((s, i) => (
               <motion.div key={s.num}
                 className="group bg-white rounded-2xl p-5 border-[1.5px] border-gray-200 text-center transition-all duration-500 ease-smooth hover:border-brand-orange hover:shadow-orange hover:-translate-y-1"
@@ -316,7 +316,7 @@ export default function Claims() {
               Everything You Need to <span className="text-brand-orange">Know</span>
             </h2>
           </motion.div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
             {hubCards.map((c, i) => (
               <motion.button key={c.id}
                 onClick={() => setModal(c.id)}

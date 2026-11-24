@@ -97,7 +97,7 @@ export default function TestimonialsSection() {
             <button
               key={i}
               onClick={() => setActive(i)}
-              className={`rounded-full transition-all duration-600 ease-smooth border-none cursor-pointer ${
+              className={`rounded-full transition-all duration-600 ease-smooth border-none cursor-pointer p-2 ${
                 active === i
                   ? 'w-6 h-2 bg-brand-orange'
                   : 'w-2 h-2 bg-gray-300 hover:bg-brand-orange/50'

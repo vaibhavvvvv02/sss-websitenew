@@ -84,7 +84,7 @@ function StatCard({ s, i, active }: { s: (typeof statData)[0]; i: number; active
   const count = useCountUp(s.value, s.divide, active)
   return (
     <motion.div
-      className="flex-1 min-w-[200px] max-w-[240px] flex items-center gap-4 bg-white rounded-2xl px-5 py-5 border border-gray-100 hover:-translate-y-1 hover:shadow-apple-lg hover:border-orange-200 transition-all duration-500 ease-smooth"
+      className="flex-1 min-w-[150px] max-w-[240px] flex items-center gap-4 bg-white rounded-2xl px-5 py-5 border border-gray-100 hover:-translate-y-1 hover:shadow-apple-lg hover:border-orange-200 transition-all duration-500 ease-smooth"
       style={{ boxShadow: '0 2px 10px rgba(17,24,39,0.05)' }}
       initial={{ opacity: 0, y: 18 }}
       animate={active ? { opacity: 1, y: 0 } : {}}
@@ -299,7 +299,7 @@ export default function OurStory() {
                 animate={teamInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.15, duration: 0.6, ease: EASE }}
               >
-                <div className="w-full h-[400px] overflow-hidden" style={{ background: l.bgColor }}>
+                <div className="w-full h-[280px] md:h-[400px] overflow-hidden" style={{ background: l.bgColor }}>
                   <img src={l.img} alt={l.name} className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
                 </div>
                 <div className="p-6 pb-7">

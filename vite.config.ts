@@ -6,6 +6,14 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 5174,
+    host: true,
+    proxy: {
+      '/website': {
+        target: 'https://uatbackend.sssriskmanagement.in',
+        changeOrigin: true,
+        secure: true,
+      },
+    },
   },
   resolve: {
     alias: {

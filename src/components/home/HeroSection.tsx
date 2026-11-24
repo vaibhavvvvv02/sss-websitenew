@@ -19,9 +19,11 @@ export default function HeroSection() {
         {/* LEFT */}
         <div>
           {/* Brand row */}
-          <div className="flex items-center gap-7 flex-wrap mb-7">
+          <div className="flex items-start gap-7 flex-wrap mb-7">
             {/* Logo roll-in — same animation as Products/OurStory pages */}
-            <LogoRollIn size={140} />
+            <div className="-mt-4">
+              <LogoRollIn size={140} />
+            </div>
 
             <div className="flex-1 min-w-0">
               <div className="overflow-hidden">

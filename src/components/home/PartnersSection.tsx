@@ -75,6 +75,7 @@ export default function PartnersSection() {
   }
   const onTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
     if (!isDragging.current) return
+    e.preventDefault()
     trackRef.current!.scrollLeft = dragStartScroll.current - (e.touches[0].pageX - dragStartX.current)
   }
   const onTouchEnd = () => { isDragging.current = false; pauseThenResume() }
@@ -106,7 +107,7 @@ export default function PartnersSection() {
         <div
           ref={trackRef}
           className="flex gap-5 overflow-x-scroll pb-3 pt-2 cursor-grab select-none"
-          style={{ scrollbarWidth: 'none' }}
+          style={{ scrollbarWidth: 'none', touchAction: 'pan-y' }}
           onMouseDown={onMouseDown}
           onMouseMove={onMouseMove}
           onMouseUp={endDrag}
@@ -120,6 +121,7 @@ export default function PartnersSection() {
               key={i}
               title={p.name}
               className="flex-shrink-0 w-[190px] h-[110px] bg-white border-[1.5px] border-gray-200 rounded-2xl flex items-center justify-center p-4 shadow-sm transition-all duration-500 ease-smooth hover:border-brand-orange hover:shadow-apple hover:-translate-y-1"
+              style={{ maxWidth: '190px', minWidth: '190px' }}
             >
               <img
                 src={p.img}

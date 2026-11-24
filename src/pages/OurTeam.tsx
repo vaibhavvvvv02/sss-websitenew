@@ -36,46 +36,60 @@ const leaders = [
   },
 ]
 
-const teamData: Record<string, { name: string; role: string; experience: number; image: string }[]> = {
+const teamData: Record<string, { name: string; role: string; experience: number; image: string; objectPosition?: string }[]> = {
   Ahmedabad: [
-    { name: 'Manoj Das',      role: 'Head UW & Compliance',       experience: 37, image: '/assets/team/ahmedabad/das.png' },
-    { name: 'Pradeep Gandhi', role: 'Head-Claims',                 experience: 38, image: '/assets/team/ahmedabad/pradeep.png' },
-    { name: 'Amit Dwivedi',   role: 'Sr. VP - Corporate',          experience: 27, image: '/assets/team/ahmedabad/amit.jpeg' },
-    { name: 'Anu Bakshi',     role: 'Team Head',                   experience: 27, image: '/assets/team/ahmedabad/masi.png' },
-    { name: 'Krunal Shah',    role: 'Agency Head',                 experience: 23, image: '/assets/team/ahmedabad/kunal.png' },
-    { name: 'Sunil Bhadra',   role: 'President',                   experience: 20, image: '/assets/team/ahmedabad/sunil.png' },
-    { name: 'Devang Kamdar',  role: 'Finance Manager',             experience: 15, image: '/assets/team/ahmedabad/devang.png' },
-    { name: 'Karthik Iyer',   role: 'Sr. Corporate Risk Manager',  experience: 5,  image: '/assets/team/ahmedabad/kartik.png' },
+    { name: 'Manoj Das',           role: 'Head UW & Compliance',            experience: 37, image: '/assets/team/ahmedabad/das.png' },
+    { name: 'Pradeep Gandhi',      role: 'Head-Claims',                      experience: 38, image: '/assets/team/ahmedabad/pradeep.png' },
+    { name: 'Amit Dwivedi',        role: 'Sr. VP - Corporate',               experience: 27, image: '/assets/team/ahmedabad/amit.jpeg' },
+    { name: 'Anu Bakshi',          role: 'Team Head',                        experience: 27, image: '/assets/team/ahmedabad/masi.png' },
+    { name: 'Krunal Shah',         role: 'Agency Head',                      experience: 23, image: '/assets/team/ahmedabad/kunal.png' },
+    { name: 'Sunil Bhadra',        role: 'President',                        experience: 20, image: '/assets/team/ahmedabad/sunil.png' },
+    { name: 'Devang Kamdar',       role: 'Finance Manager',                  experience: 15, image: '/assets/team/ahmedabad/devang.png', objectPosition: 'center 30%' },
+    { name: 'Karthik Iyer',        role: 'Sr. Corporate Risk Manager',       experience: 5,  image: '/assets/team/ahmedabad/kartik.png' },
+    { name: 'Nayan Vaghela',       role: 'Sr. Corporate Risk Manager',       experience: 5,  image: '/assets/team/ahmedabad/nayan.png', objectPosition: 'center 20%' },
+    { name: 'Jitendra Alamchandani', role: 'Sr. VP - Corporate Risk Management', experience: 20, image: '/assets/team/ahmedabad/jitendra.jpeg' },
+    { name: 'Bharat Banker',       role: 'VP - Corporate Risk Management',   experience: 20, image: '/assets/team/ahmedabad/bharat.jpeg' },
+    { name: 'Dipika Yadav',        role: 'Asst. VP - Corporate Risk Management', experience: 5, image: '/assets/team/ahmedabad/dipika.jpeg' },
   ],
   Gandhidham: [
     { name: 'Darshan Solanki', role: 'Regional Sales Manager',  experience: 20, image: '/assets/team/gandhidham/darshan.png' },
-    { name: 'Dinesh Bhagat',   role: 'Relationship Manager',    experience: 19, image: '' },
+    { name: 'Dinesh Bhagat',   role: 'Relationship Manager',    experience: 19, image: '/assets/team/gandhidham/dinesh.jpeg' },
+    { name: 'Mulji Maheshwari', role: 'Relationship Manager',   experience: 20, image: '/assets/team/gandhidham/mulaji.jpeg' },
   ],
   Rajkot: [
     { name: 'Mayur Bhensdadiya', role: 'Zonal Sales Manager',    experience: 23, image: '/assets/team/rajkot/mayur.png' },
-    { name: 'Tejas Lal',         role: 'Relationship Manager',   experience: 19, image: '' },
+    { name: 'Tejas Lal',         role: 'Relationship Manager',   experience: 19, image: '/assets/team/rajkot/tejal.jpeg' },
   ],
   Surat: [
-    { name: 'Anil Mohite',   role: 'VP - Public Relationship Officer', experience: 13, image: '/assets/team/surat/anil.png' },
-    { name: 'Kalpesh Remje', role: 'Relationship Manager',              experience: 13, image: '/assets/team/surat/kalpesh.png' },
+    { name: 'Kalpesh Remje', role: 'Relationship Manager', experience: 13, image: '/assets/team/surat/kalpesh.png' },
+  ],
+  Vapi: [
+    { name: 'Anil Mohite',        role: 'VP - Public Relationship Officer', experience: 13, image: '/assets/team/surat/anil.png' },
+    { name: 'Chirag Mahyavanshi', role: 'Relationship Manager',             experience: 10, image: '/assets/team/vapi/chirag.jpeg' },
   ],
   Mumbai: [
-    { name: 'Sneha Gonsalves', role: 'Vice President',            experience: 17, image: '/assets/team/mumbai/sneha.png' },
-    { name: 'Anand Rao',       role: 'Sr. Relationship Manager',  experience: 15, image: '/assets/team/mumbai/aanandrao.png' },
+    { name: 'Sneha Gonsalves', role: 'Vice President',              experience: 17, image: '/assets/team/mumbai/sneha.png' },
+    { name: 'Anand Rao',       role: 'Sr. Relationship Manager',    experience: 15, image: '/assets/team/mumbai/aanandrao.png' },
+    { name: 'Darshan Bhosale', role: 'Sr. Corporate Risk Manager',  experience: 8,  image: '/assets/team/mumbai/darshan.jpeg' },
   ],
   Pune: [
+    { name: 'Reena Tyagi', role: 'Business Head', experience: 20, image: '/assets/team/pune/reena.jpeg' },
   ],
   Kolhapur: [
     { name: 'Rahul Mane',          role: 'Sr. VP - Corporate',          experience: 25, image: '/assets/team/kolhapur/rahul.png' },
-    { name: 'Sangram Pawar Medhe', role: 'Sr. Relationship Manager',    experience: 15, image: '' },
+    { name: 'Sangram Pawar Medhe', role: 'Sr. Relationship Manager', experience: 15, image: '/assets/team/kolhapur/sangram.jpeg' },
   ],
   Kolkata: [
-    { name: 'Gitimoni Gogoi',    role: 'AVP - Corporate Risk Management', experience: 21, image: '/assets/team/kolkata/gitimoni.png' },
-    { name: 'Kingshuk Chatterjee', role: 'Sr. Corporate Risk Manager',   experience: 20, image: '/assets/team/kolkata/kingshuk.png' },
+    { name: 'Chirabrata Sen',      role: 'Corporate Risk Manager',           experience: 40, image: '/assets/team/kolkata/chirabrata.jpeg' },
+    { name: 'Gitimoni Gogoi',      role: 'AVP - Corporate Risk Management',  experience: 21, image: '/assets/team/kolkata/gitimoni.png' },
+    { name: 'Kingshuk Chatterjee', role: 'Sr. Corporate Risk Manager',       experience: 20, image: '/assets/team/kolkata/kingshuk.png' },
   ],
   Noida: [
-    { name: 'Rajeev Kumar', role: 'Business Head',          experience: 40, image: '/assets/team/noida/rajiv.png' },
-    { name: 'Shakti Kumar', role: 'Corporate Risk Manager', experience: 20, image: '' },
+    { name: 'Rajeev Kumar',   role: 'Business Head',                    experience: 40, image: '/assets/team/noida/rajiv.png' },
+    { name: 'Shailesh Kumar', role: 'AVP - Corporate Risk Management',   experience: 5,  image: '/assets/team/noida/shailesh.jpeg' },
+    { name: 'Manish Kumar',   role: 'VP - Corporate Risk Management',    experience: 15, image: '/assets/team/noida/manish.jpeg' },
+    { name: 'Kanhiya Mandal', role: 'AVP - Corporate Risk Management',   experience: 11, image: '/assets/team/noida/kanhiya.jpeg' },
+    { name: 'Satish Singh',   role: 'AVP - Corporate Risk Management',   experience: 15, image: '/assets/team/surat/satish.jpeg' },
   ],
   Bangalore: [
     { name: 'Vasanth Kumar', role: 'Relationship Manager', experience: 20, image: '' },
@@ -184,7 +198,7 @@ export default function OurTeam() {
                 className="group bg-white border-[1.5px] border-gray-200 rounded-2xl overflow-hidden transition-all duration-500 ease-smooth hover:border-brand-orange hover:shadow-orange hover:-translate-y-1"
                 initial={{ opacity: 0, y: 32 }} animate={leaderInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.15, duration: 0.6, ease: EASE }}>
-                <div className="w-full h-[400px] overflow-hidden" style={{ background: l.bgColor }}>
+                <div className="w-full h-[280px] md:h-[400px] overflow-hidden" style={{ background: l.bgColor }}>
                   <img src={l.img} alt={l.name}
                     className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
                 </div>
@@ -218,7 +232,7 @@ export default function OurTeam() {
 
           {/* City Tabs */}
           <div className="overflow-x-auto pb-1 mb-10" style={{ scrollbarWidth: 'none' }}>
-            <div className="flex flex-wrap justify-start md:justify-center gap-2 w-max md:w-auto">
+            <div className="flex flex-wrap justify-start md:justify-center gap-2 w-full">
               {cities.map((city, i) => (
                 <motion.button key={city}
                   onClick={() => setActiveCity(i)}
@@ -252,7 +266,8 @@ export default function OurTeam() {
                   transition={{ delay: i * 0.06, duration: 0.7, ease: EASE }}>
                   {m.image ? (
                     <img src={m.image} alt={m.name}
-                      className="w-20 h-20 rounded-full object-cover mx-auto mb-3 border-2 border-gray-100 group-hover:border-brand-orange transition-colors" />
+                      className="w-20 h-20 rounded-full object-cover mx-auto mb-3 border-2 border-gray-100 group-hover:border-brand-orange transition-colors"
+                      style={{ objectPosition: m.objectPosition || 'center top' }} />
                   ) : (
                     <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-3 font-poppins font-bold text-[22px] text-white group-hover:scale-105 transition-transform"
                       style={{ background: nameToColor(m.name) }}>

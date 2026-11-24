@@ -46,7 +46,7 @@ export default function FeaturedProducts() {
             </ul>
             <Link
               to="/products"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-brand-blue text-white rounded-lg font-poppins font-semibold text-[13px] no-underline transition-all duration-500 ease-smooth hover:bg-brand-blue-light hover:-translate-y-1"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-brand-blue text-white rounded-lg font-poppins font-semibold text-[13px] no-underline transition-all duration-500 ease-smooth hover:bg-brand-blue-light hover:-translate-y-1 w-full text-center justify-center"
             >
               EXPLORE INDIVIDUAL INSURANCE →
             </Link>
@@ -86,7 +86,7 @@ export default function FeaturedProducts() {
             </ul>
             <Link
               to="/products"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-brand-orange text-white rounded-lg font-poppins font-semibold text-[13px] no-underline transition-all duration-500 ease-smooth hover:bg-brand-orange-dark hover:-translate-y-1"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-brand-orange text-white rounded-lg font-poppins font-semibold text-[13px] no-underline transition-all duration-500 ease-smooth hover:bg-brand-orange-dark hover:-translate-y-1 w-full text-center justify-center"
             >
               EXPLORE CORPORATE INSURANCE →
             </Link>

@@ -29,10 +29,7 @@ export default function Footer() {
         {/* Brand */}
         <div>
           <Link to="/" className="flex items-center gap-2.5 no-underline mb-4">
-            <img src="/assets/sss.png" alt="SSS Logo" className="w-16 h-16 object-contain flex-shrink-0" />
-            <div className="font-poppins font-bold text-[12px] text-[#1a2e4a] leading-snug">
-              S S S<br />Risk Management &<br />Insurance Brokers<br />Pvt. Ltd.
-            </div>
+            <img src="/assets/sss_logo.png" alt="SSS Logo" className="w-20 h-20 md:w-28 md:h-28 lg:w-36 lg:h-36 object-contain flex-shrink-0" />
           </Link>
           <div className="flex gap-2.5 mt-4">
             {[
@@ -111,7 +108,7 @@ export default function Footer() {
 
       {/* IRDA Info */}
       <div className="bg-gray-50 border-t border-gray-200 mt-5 px-6 py-5 text-center">
-        <p className="font-inter text-[12px] text-gray-600 leading-[1.9]">
+        <p className="font-inter text-[12px] text-gray-600 leading-[1.9] break-words" style={{ overflowWrap: 'anywhere' }}>
           IRDA License Number: {COMPANY.irdaiLicense} &nbsp;|&nbsp; Category: Direct Broker (Life &amp; General)<br />
           Insurance Broker License No: {COMPANY.brokerLicenseNo} &nbsp;|&nbsp; License Period: {COMPANY.licensePeriod}<br />
           CIN Number: {COMPANY.cin} &nbsp;|&nbsp; GST Number: {COMPANY.gst}<br />

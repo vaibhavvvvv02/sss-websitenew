@@ -90,14 +90,14 @@ export default function ProductDetail() {
           box-shadow: 0 2px 10px rgba(17,24,39,0.06);
         }
         .pd-table-wrap table {
-          min-width: 460px;
+          min-width: 360px;
           width: 100%;
           border-collapse: collapse;
         }
         .pd-table-wrap td:first-child {
           white-space: normal;
-          min-width: 120px;
-          max-width: 160px;
+          min-width: 100px;
+          max-width: 140px;
         }
         .pd-table-wrap td,
         .pd-table-wrap th {
@@ -330,7 +330,7 @@ export default function ProductDetail() {
             animate={contentInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, ease: EASE }}>
 
-            <p className="font-inter text-[15.5px] text-gray-600 leading-[1.9] mb-8">
+            <p className="font-inter text-[15px] text-gray-600 leading-[1.85] mb-8 p-5 bg-gray-50 rounded-2xl border-l-4 border-brand-orange">
               {product.longDescription}
             </p>
 
@@ -341,46 +341,27 @@ export default function ProductDetail() {
               </span>
               What's Covered
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
               {product.features.map((f, i) => (
                 <motion.div key={f}
-                  className="flex items-center gap-2.5 font-inter text-[13.5px] text-gray-700 bg-gray-50 rounded-xl px-3.5 py-2.5 border border-gray-100"
+                  className="flex items-center gap-3 font-inter text-[13.5px] text-gray-700 bg-white rounded-xl px-4 py-3 border border-gray-200 shadow-sm"
                   initial={{ opacity: 0, y: 8 }}
                   animate={contentInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ delay: 0.1 + i * 0.04, duration: 0.5, ease: EASE }}>
-                  <span className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0"
+                  <span className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
                     style={{ background: `${accent}20` }}>
-                    <CheckCircle2 size={10} color={accent} />
+                    <CheckCircle2 size={12} color={accent} />
                   </span>
                   {f}
                 </motion.div>
               ))}
             </div>
 
-            <h3 className="font-poppins font-bold text-[18px] text-gray-900 mb-4 flex items-center gap-2">
-              <span className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0"
-                style={{ background: `${accent}18` }}>
-                <Star size={14} color={accent} />
-              </span>
-              Available Add-Ons
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {product.addOns.map((a, i) => (
-                <motion.span key={a}
-                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full font-inter text-[12.5px] font-semibold border-[1.5px] transition-all duration-500 hover:-translate-y-0.5"
-                  style={{ borderColor: `${accent}50`, color: accent, background: `${accent}08` }}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={contentInView ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ delay: 0.3 + i * 0.04, duration: 0.4, ease: EASE }}>
-                  ✦ {a}
-                </motion.span>
-              ))}
-            </div>
           </motion.div>
 
-          {/* Right — image, aligned top-right */}
+          {/* Right — image + add-ons below */}
           <motion.div
-            className="pd-content-img flex items-start justify-end"
+            className="pd-content-img flex flex-col items-end"
             initial={{ opacity: 0, x: 32 }}
             animate={contentInView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: 0.15, duration: 0.8, ease: EASE }}>
@@ -390,6 +371,28 @@ export default function ProductDetail() {
               style={{ maxHeight: 280, maxWidth: '80%', objectFit: 'contain', display: 'block', marginTop: '-24px' }}
               onError={e => { (e.target as HTMLImageElement).src = '/assets/sss.png' }}
             />
+            {/* Add-Ons below image */}
+            <div className="w-full mt-6">
+              <h3 className="font-poppins font-bold text-[16px] text-gray-900 mb-3 flex items-center gap-2">
+                <span className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0"
+                  style={{ background: `${accent}18` }}>
+                  <Star size={14} color={accent} />
+                </span>
+                Available Add-Ons
+              </h3>
+              <div className="grid grid-cols-2 gap-2">
+                {product.addOns.map((a, i) => (
+                  <motion.span key={a}
+                    className="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl font-inter text-[12px] font-semibold border-[1.5px] text-center transition-all duration-500 hover:-translate-y-0.5"
+                    style={{ borderColor: `${accent}50`, color: accent, background: `${accent}08` }}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={contentInView ? { opacity: 1, scale: 1 } : {}}
+                    transition={{ delay: 0.3 + i * 0.04, duration: 0.4, ease: EASE }}>
+                    ✦ {a}
+                  </motion.span>
+                ))}
+              </div>
+            </div>
           </motion.div>
 
         </div>
